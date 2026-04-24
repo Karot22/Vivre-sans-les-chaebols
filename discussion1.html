@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Discussion 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="discussion1">
+
+    <!-- Bouton menu -->
+<div id="menuBtn" class="menu-btn">
+  <img id="menuIcon" src="img/menu.png" alt="menu">
+</div>
+
+<!-- Overlay -->
+<div id="menuOverlay" class="menu-overlay"></div>
+
+<!-- Menu -->
+<div id="menu" class="menu">
+  <h2>Menu</h2>
+
+  <div class="menu-links">
+    <div class="menu-item" id="goDual">Accueil</div>
+    <div class="menu-item" id="goDoc">Documentaire</div>
+    <div class="menu-item" id="goAnnexe">Annexe</div>
+    <div class="menu-item" id="goLegal">Mentions légales</div>
+  </div>
+
+  <div class="menu-lang">
+    <p>Langue :</p>
+    <button data-lang="fr">FR</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="kr">KR</button>
+  </div>
+</div>
+
+
+    <div class="discussion">
+        <iframe class="vid" id="vidDiscussion1" src="https://player.vimeo.com/video/1096384424?h=f4a5a934dc&color=ffffff&title=0&byline=0&portrait=0"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+        <div class="next">
+            <img class="passer" id="skip" src="img/fleche-droite-2.png">
+            <p>Passer la vidéo</p>
+        </div>
+        <div class="replay" id="replayBtn">
+            <img class="rejouer" id="replays" src="img/rejouer.png">
+        </div>
+    </div>
+    
+    <div class="cacher">    
+        <div class="boutons">
+            <div class="culture" id="cultureT"><p>Culture du travail en corée du sud</p></div>
+            <div class="culture" id="cultureU"><p>Culture universitaire liée aux Chaebols</p></div>
+            <div class="chercher" id="chercherB">
+                <p>Aller chercher à boire</p>
+                <img src="img/marcher.png" class="shape s2">
+            </div>
+        </div>
+    </div>
+
+    <div class="slider" id="slider">
+        <div class="slider-content" id="sliderContent">
+        <!-- contenu dynamique -->
+        </div>
+
+        <div class="closeSlider" id="closeSlider">✕</div>
+    </div>
+    
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
