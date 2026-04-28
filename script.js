@@ -150,23 +150,58 @@ if (document.body.classList.contains("intro")) {
   // Page d'introduction js
 
   document.getElementById("apr1").onclick = () => {
-    sliderContent.innerHTML = "<h1>Approfondissement</h1>";
+    sliderContent.innerHTML = "<h1>Approfondissement historique</h1> <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQRByxhwAz-Ac_rrRVguZtsp0sJ5h7y2v3JBwGaQW7cxjoEzKkf4tH9aXF30ZayVZVAeS6OUBfjSH2q&font=Default&lang=en&initial_zoom=2&width=100%25&height=100%' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe> <br> <h2>International Monetary Fund</h2>";
     slider.classList.add("show");
   };
 
   document.getElementById("chaebolsvs").onclick = () => {
-    sliderContent.innerHTML = "<h1>Comparaison</h1>";
+    sliderContent.innerHTML = `
+    <h1>Differences entre Chaebol et grande entreprise</h1>
+
+    <div class="definition-box">
+      
+      <div class="definition-text">
+        <p><strong>Définition étymologique :</strong></p>
+        <div class="chips">
+          <span>Chae = richesse</span>
+          <span>bol = clan</span>
+          <span>Chaebol = clan des riches</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="info">i</div>
+        <h3>Chaebols</h3>
+        <p>Conglomérat industriel sud-coréen de type familial, qui combine des activités très diverses, avec le soutien de l'État et des banques.</p>
+      </div>
+
+      <div class="card">
+        <div class="info">i</div>
+        <h3>Conglomérat</h3>
+        <p>Ensemble d'entreprises réunies par des liens juridiques et financiers plus ou moins précis, avec des activités très diverses.</p>
+      </div>
+
+      <div class="card">
+        <div class="info">i</div>
+        <h3>Grande entreprise</h3>
+        <p>Entreprise employant au moins 5000 salariés, avec un chiffre d'affaires supérieur à 1,5 milliard d'euros.</p>
+      </div>
+    </div>
+
+  `;
     slider.classList.add("show");
   };
 
   document.getElementById("preparer1").onclick = () => {
-    window.location.href = "deplacer1.html";
+    window.location.href = "deplacer-part-1.html";
   };
 }
 
 
 /*********************************/
-/************* DEPLACER **********/
+/************* DEPLACER 1 **********/
 /*********************************/
 
 if (document.body.classList.contains("deplacer1")) {
@@ -229,22 +264,28 @@ if (document.body.classList.contains("deplacer1")) {
   };
 
   document.getElementById("apr2").onclick = () => {
-    sliderContent.innerHTML = "<h1>Approfondissement 2</h1>";
+    sliderContent.innerHTML = "<h1>Annexes complémentaires</h1> <br> <h2>L'histoire de Hyundai</h2> <br> <h2>Carte de Busan</h2>";
     slider.classList.add("show");
   };
 
   document.getElementById("itw1").onclick = () => {
-    sliderContent.innerHTML = "<h1>Interview de ?</h1>";
+    sliderContent.innerHTML = `
+    <h1>Interview de ?</h1> <br> <iframe src="https://player.vimeo.com/video/1096384424?h=f4a5a934dc&color=ffffff&title=0&byline=0&portrait=0"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen>
+        </iframe>
+        `;
     slider.classList.add("show");
   };
 
-  document.getElementById("carte1").onclick = () => {
-    sliderContent.innerHTML = "<h1>Carte</h1>";
-    slider.classList.add("show");
-  };
+  // document.getElementById("carte1").onclick = () => {
+  //   sliderContent.innerHTML = "<h1>Carte</h1>";
+  //   slider.classList.add("show");
+  // };
 
   document.getElementById("preparer2").onclick = () => {
-    window.location.href = "deplacer2.html";
+    window.location.href = "deplacer-part-2.html";
   };
 }
 
@@ -302,6 +343,7 @@ if (document.body.classList.contains("deplacer2")) {
     });
   }
 
+
   /******** SLIDER ********/
 
   const slider = document.getElementById("slider");
@@ -316,11 +358,403 @@ if (document.body.classList.contains("deplacer2")) {
     slider.classList.add("show");
   };
 
-
   document.getElementById("questionsM").onclick = () => {
-    window.location.href = "discussion1.html";
+    window.location.href = "discussion-part-1.html";
   };
 }
+
+
+  /*********************************/
+/************* DISCUSSION PART 1 **********/
+/*********************************/
+
+if (document.body.classList.contains("discussion1")) {
+
+  const iframe = document.getElementById("vidDiscussion1");
+  const skip = document.getElementById("skip");
+  const overlay = document.querySelector(".cacher");
+  const replay = document.getElementById("replayBtn");
+
+  let done = false;
+
+  if (iframe) {
+    discussionPlayer1 = new Vimeo.Player(iframe);
+
+    function showUI() {
+      overlay.classList.add("show");
+      replay.classList.add("show");
+      discussionPlayer1.pause();
+    }
+
+    function hideUI() {
+      overlay.classList.remove("show");
+      replay.classList.remove("show");
+    }
+
+    skip.onclick = showUI;
+
+    discussionPlayer1.on("ended", showUI);
+
+    discussionPlayer1.on("timeupdate", data => {
+      if (!done && data.percent >= 0.999) {
+        done = true;
+        showUI();
+      }
+    });
+
+    replay.onclick = async () => {
+      done = false;
+      hideUI();
+      await discussionPlayer1.setCurrentTime(0);
+      discussionPlayer1.play();
+    };
+
+    discussionPlayer1.on("play", async () => {
+      const t = await discussionPlayer1.getCurrentTime();
+      if (t < 1) {
+        done = false;
+        hideUI();
+      }
+    });
+  }
+
+  /******** SLIDER ********/
+
+  const slider = document.getElementById("slider");
+  const sliderContent = document.getElementById("sliderContent");
+
+  document.getElementById("closeSlider").onclick = () => {
+    slider.classList.remove("show");
+  };
+
+  document.getElementById("cultureT").onclick = () => {
+    sliderContent.innerHTML = "<h1>Culture du travail en Corée du Sud</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("cultureU").onclick = () => {
+    sliderContent.innerHTML = "<h1>Culture universitaire liée aux Chaebols</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("chercherB").onclick = () => {
+    window.location.href = "trouver-a-boire.html";
+  };
+}
+
+  /*********************************/
+/************* TROUVER A BOIRE **********/
+/*********************************/
+
+if (document.body.classList.contains("trouver-boire")) {
+
+  const iframe = document.getElementById("vidTrouverBoire");
+  const skip = document.getElementById("skip");
+  const overlay = document.querySelector(".cacher");
+  const replay = document.getElementById("replayBtn");
+
+  let done = false;
+
+  if (iframe) {
+    trouverPlayer = new Vimeo.Player(iframe);
+
+    function showUI() {
+      overlay.classList.add("show");
+      replay.classList.add("show");
+      trouverPlayer.pause();
+    }
+
+    function hideUI() {
+      overlay.classList.remove("show");
+      replay.classList.remove("show");
+    }
+
+    skip.onclick = showUI;
+
+    trouverPlayer.on("ended", showUI);
+
+    trouverPlayer.on("timeupdate", data => {
+      if (!done && data.percent >= 0.999) {
+        done = true;
+        showUI();
+      }
+    });
+
+    replay.onclick = async () => {
+      done = false;
+      hideUI();
+      await trouverPlayer.setCurrentTime(0);
+      trouverPlayer.play();
+    };
+
+    trouverPlayer.on("play", async () => {
+      const t = await trouverPlayer.getCurrentTime();
+      if (t < 1) {
+        done = false;
+        hideUI();
+      }
+    });
+  }
+
+  /******** SLIDER ********/
+
+  const slider = document.getElementById("slider");
+  const sliderContent = document.getElementById("sliderContent");
+
+  document.getElementById("closeSlider").onclick = () => {
+    slider.classList.remove("show");
+  };
+
+  document.getElementById("itw2").onclick = () => {
+    sliderContent.innerHTML = "<h1>Interview complète de ?</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("mini-jeu").onclick = () => {
+    sliderContent.innerHTML = "<h1>Mini-jeu</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("poserQ").onclick = () => {
+    window.location.href = "discussion-part-2.html";
+  };
+}
+
+  /*********************************/
+/************* DISCUSSION PART 2 **********/
+/*********************************/
+
+if (document.body.classList.contains("discussion2")) {
+
+  const iframe = document.getElementById("vidDiscussion2");
+  const skip = document.getElementById("skip");
+  const overlay = document.querySelector(".cacher");
+  const replay = document.getElementById("replayBtn");
+
+  let done = false;
+
+  if (iframe) {
+    discussionPlayer = new Vimeo.Player(iframe);
+
+    function showUI() {
+      overlay.classList.add("show");
+      replay.classList.add("show");
+      discussionPlayer.pause();
+    }
+
+    function hideUI() {
+      overlay.classList.remove("show");
+      replay.classList.remove("show");
+    }
+
+    skip.onclick = showUI;
+
+    discussionPlayer.on("ended", showUI);
+
+    discussionPlayer.on("timeupdate", data => {
+      if (!done && data.percent >= 0.999) {
+        done = true;
+        showUI();
+      }
+    });
+
+    replay.onclick = async () => {
+      done = false;
+      hideUI();
+      await discussionPlayer.setCurrentTime(0);
+      discussionPlayer.play();
+    };
+
+    discussionPlayer.on("play", async () => {
+      const t = await discussionPlayer.getCurrentTime();
+      if (t < 1) {
+        done = false;
+        hideUI();
+      }
+    });
+  }
+
+  /******** SLIDER ********/
+
+  const slider = document.getElementById("slider");
+  const sliderContent = document.getElementById("sliderContent");
+
+  document.getElementById("closeSlider").onclick = () => {
+    slider.classList.remove("show");
+  };
+
+  document.getElementById("apr3").onclick = () => {
+    sliderContent.innerHTML = "<h1>Annexes complémentaires</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("itw3").onclick = () => {
+    sliderContent.innerHTML = "<h1>Interview complète de ?</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("manger").onclick = () => {
+    window.location.href = "se-nourrir.html";
+  };
+}
+
+
+
+  /*********************************/
+/************* Se nourrir et vie sociale **********/
+/*********************************/
+
+if (document.body.classList.contains("se-nourrir")) {
+
+  const iframe = document.getElementById("vidSeNourrir");
+  const skip = document.getElementById("skip");
+  const overlay = document.querySelector(".cacher");
+  const replay = document.getElementById("replayBtn");
+
+  let done = false;
+
+  if (iframe) {
+    nourrirPlayer = new Vimeo.Player(iframe);
+
+    function showUI() {
+      overlay.classList.add("show");
+      replay.classList.add("show");
+      nourrirPlayer.pause();
+    }
+
+    function hideUI() {
+      overlay.classList.remove("show");
+      replay.classList.remove("show");
+    }
+
+    skip.onclick = showUI;
+
+    nourrirPlayer.on("ended", showUI);
+
+    nourrirPlayer.on("timeupdate", data => {
+      if (!done && data.percent >= 0.999) {
+        done = true;
+        showUI();
+      }
+    });
+
+    replay.onclick = async () => {
+      done = false;
+      hideUI();
+      await nourrirPlayer.setCurrentTime(0);
+      nourrirPlayer.play();
+    };
+
+    nourrirPlayer.on("play", async () => {
+      const t = await nourrirPlayer.getCurrentTime();
+      if (t < 1) {
+        done = false;
+        hideUI();
+      }
+    });
+  }
+
+  /******** SLIDER ********/
+
+  const slider = document.getElementById("slider");
+  const sliderContent = document.getElementById("sliderContent");
+
+  document.getElementById("closeSlider").onclick = () => {
+    slider.classList.remove("show");
+  };
+
+  document.getElementById("apr4").onclick = () => {
+    sliderContent.innerHTML = "<h1>Annexes complémentaires</h1>";
+    slider.classList.add("show");
+  };
+
+  document.getElementById("conclusion").onclick = () => {
+    window.location.href = "conclusion.html";
+  };
+}
+
+
+
+  /*********************************/
+/************* Page Conclusion **********/
+/*********************************/
+
+if (document.body.classList.contains("conclusion")) {
+
+  const iframe = document.getElementById("vidConclusion");
+  const skip = document.getElementById("skip");
+  const overlay = document.querySelector(".cacher");
+  const replay = document.getElementById("replayBtn");
+
+  let done = false;
+
+  if (iframe) {
+    conclusionPlayer = new Vimeo.Player(iframe);
+
+    function showUI() {
+      overlay.classList.add("show");
+      replay.classList.add("show");
+      conclusionPlayer.pause();
+    }
+
+    function hideUI() {
+      overlay.classList.remove("show");
+      replay.classList.remove("show");
+    }
+
+    skip.onclick = showUI;
+
+    conclusionPlayer.on("ended", showUI);
+
+    conclusionPlayer.on("timeupdate", data => {
+      if (!done && data.percent >= 0.999) {
+        done = true;
+        showUI();
+      }
+    });
+
+    replay.onclick = async () => {
+      done = false;
+      hideUI();
+      await conclusionPlayer.setCurrentTime(0);
+      conclusionPlayer.play();
+    };
+
+    conclusionPlayer.on("play", async () => {
+      const t = await conclusionPlayer.getCurrentTime();
+      if (t < 1) {
+        done = false;
+        hideUI();
+      }
+    });
+  }
+
+  /******** SLIDER ********/
+
+  const slider = document.getElementById("slider");
+  const sliderContent = document.getElementById("sliderContent");
+
+  document.getElementById("closeSlider").onclick = () => {
+    slider.classList.remove("show");
+  };
+
+  document.getElementById("apr5").onclick = () => {
+    window.location.href = "informations.html";
+  };
+
+  document.getElementById("annexes").onclick = () => {
+    window.location.href = "annexes.html";
+  };
+}
+
+
+
+
+
+
+
+
+
 
 
 /*********************************/
@@ -379,3 +813,6 @@ langBtns.forEach(btn => {
     location.reload();
   };
 });
+
+
+

@@ -59,7 +59,7 @@ p {
 .menu {
   position: fixed;
   top: 0;
-  left: -66%;
+  left: -74%;
   width: 66%;
   height: 100vh;
   background: #000;
@@ -406,6 +406,10 @@ p {
   opacity: 0;
   pointer-events: none;
   backdrop-filter: blur(8px); 
+  
+  background: rgba(0,0,0,0.5); /* assombrie la vidéo à sa fin */
+ 
+  /* filter: brightness(50%); */
 
   transition: all 0.8s ease;
   pointer-events: none;
@@ -445,50 +449,6 @@ p {
   width: 50px;
 }
 
-.approfondissement {
-    background-color: #1d3c3f;
-    color: #d8d6d2;
-    border-radius: 40px;
-    /* padding: 20px; */
-    
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
-}
-
-
-.approfondissement:hover {
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #d8d6d2; /* couleur beige */
-}
-
-
-#chaebolsvs{
-    background-color: #03120e;
-    color: #d8d6d2;
-    border-radius: 40px;
-    /* padding: 20px; */
-
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
-}
-
-
-#chaebolsvs:hover{
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #d8d6d2; /* couleur beige */
-}
 
 
 .boutons {
@@ -501,7 +461,8 @@ p {
 
 .boutons div{
   width: 500px;
-  height: 120px;
+  height: 80px;
+  /* height: 120px; */
 
   display: flex;
   align-items: center;
@@ -510,75 +471,120 @@ p {
   text-align: center;
 }
 
+.info-complementaire{
+    background-color: #D9D9D9;
+    color: #000;
+    opacity: 0.6;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
 
-#preparer1{
-  position: relative;
-  
+.info-complementaire:hover{
+  background-color: #C3A88C;
+  opacity: 0.9;
+}
+
+
+.suite{
+  background-color: #D9D9D9;
+  color: #000;
+  opacity: 0.6;
   border-radius: 40px;
-  border: 4px solid black;
-  
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.suite:hover{
+  background-color: #1D3C3F;
+  color: #A4C3E2;
+  opacity: 1;
+}
+
+
+/* Bloc définition du haut */
+
+.definition-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: #6f7b8a;
+  padding: 20px;
+  border-radius: 10px;
+
+  margin: 20px auto;
+  max-width: 1100px;
+}
+
+/* icône i */
+.info {
+  background: #9fb3c8;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
-  overflow: visible;
-
-  background: orange;
-  transition: 0.3s;
 }
 
-#preparer1 p{
+/* texte */
+.definition-text {
+  flex: 1;
+}
+
+/* chips */
+.chips {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chips span {
+  background: #c7ccd3;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* cartes */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* card */
+.card {
+  background: #6f7b8a;
+  padding: 20px;
+  border-radius: 10px;
+
+  width: 300px;
   position: relative;
-  z-index: 2;
+
+  text-align: left;
 }
 
-#preparer1:hover{
-  background: linear-gradient(45deg, 
-        #4caf50, 
-        #e91e63, 
-        #ff9800
-    );
-    color: white;
+/* titre */
+.card h3 {
+  margin-top: 10px;
 }
 
-.shape {
-  position: absolute;
-  width: 60px;
-  opacity: 0;
-  transition: all 0.5s ease;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* texte */
+.card p {
+  font-size: 14px;
+  line-height: 1.4;
 }
-
-/* positions de départ (dans le bouton) */
-
-.s2 { top: 50%; left: 50%; }
-
-
-/* #preparer1:hover .s1 {
-  transform: translate(-200px, -120px) rotate(-20deg);
-  opacity: 1;
-} */
-
-#preparer1:hover .s2 {
-  transform: translate(130px, -35px) /*rotate(20deg)*/;
-  opacity: 1;
-}
-
-/* #preparer1:hover .s3 {
-  transform: translate(170px, 60px) rotate(30deg);
-  opacity: 1;
-} */
-
-/* #preparer1:hover .s4 {
-  transform: translate(-180px, 70px) rotate(-30deg);
-  opacity: 1;
-} */
 
 
 .slider {
@@ -593,8 +599,11 @@ p {
 
   transition: bottom 0.6s ease;
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
+
+  overflow-y: auto;
 }
 
 .slider.show {
@@ -607,8 +616,25 @@ p {
 }
 
 .slider-content {
-  max-width: 800px;
+  /* max-width: 800px;
+  text-align: center; */
+  
+  flex: 1;              /* 🔥 prend toute la hauteur */
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+  
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   text-align: center;
+}
+
+.slider-content iframe {
+  flex: 1;        /* 🔥 prend tout l’espace dispo */
+  width: 100%;
+  border: none;
+  /* padding-top: 20px; */
 }
 
 .closeSlider {
@@ -621,136 +647,19 @@ p {
 
 /* Page Déplacer 1 */
 
-#itw1{
-    background-color: #03120e;
-    color: #d8d6d2;
-    border-radius: 40px;
-    /* padding: 20px; */
-
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
-}
-
-#itw1:hover{
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #d8d6d2; /* couleur beige */
-
-}
-
-#carte1{
-    background-color: #03120e;
-    color: #d8d6d2;
-    border-radius: 40px;
-    /* padding: 20px; */
-
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
-}
-
-#carte1:hover{
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #d8d6d2; /* couleur beige */
-
-}
-
-#preparer2{
-    background-color: #03120e;
-    color: #d8d6d2;
-    border-radius: 40px;
-    /* padding: 20px; */
-
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
-}
-
-#preparer2:hover{
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #d8d6d2; /* couleur beige */
-
-}
-
-.chemin {
-    background-color: #d8d6d2;
-    color: #1d3c3f;
-    border-radius: 40px;
-    /* padding: 20px; */
-    font-size: 20px;
-    font-weight: bold;
-  
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
-}
-
-.chemin:hover {
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #1d3c3f; 
-}
-
-#questionsM{
+.deplacer1 {
   position: relative;
-  
-  border-radius: 40px;
-  border: 4px solid black;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  overflow: visible;
-
-  background: orange;
-  transition: 0.3s;
-}
-
-#questionsM p{
-  position: relative;
-  z-index: 2;
-}
-
-#questionsM:hover{
-  background: linear-gradient(45deg, 
-        #4caf50, 
-        #e91e63, 
-        #ff9800
-    );
-    color: white;
-}
-
-#questionsM:hover .s2 {
-  transform: translate(130px, -35px) /*rotate(20deg)*/;
-  opacity: 1;
-}
-
-.deplacer{
   background-color: black;
 }
+
+
+/* Déplacer part 2*/
+
+.deplacer2{
+  position: relative;
+  background-color: black;
+}
+
 
 .deplacer::after {
   content: "";
@@ -760,32 +669,43 @@ p {
   pointer-events: none;
 }
 
-.deplacer1 {
-  position: relative;
-}
 
 /* Page Discussion 1 */
 
-.culture{
-    background-color: #03120e;
-    color: #d8d6d2;
-    border-radius: 40px;
-    /* padding: 20px; */
-
-    text-align: center;
-    cursor: pointer;
-
-    /* état initial = pas d’ombre */
-    box-shadow: 0px 0px 0px transparent;
-
-    transition: all 0.25s ease;
+.discussion1{
+  position: relative;
+  background-color: black;
 }
 
-.culture:hover{
-    transform: translate(-6px, -6px);
-    box-shadow: 
-        8px 8px 0px #d8d6d2; /* couleur beige */
+/* Page Trouver à boire  */
+
+.trouver-boire{
+  position: relative;
+  background-color: black;
 }
+
+/* Page Discussion 2  */
+
+.discussion2{
+  position: relative;
+  background-color: black;
+}
+
+/* Page Se Nourrir et vie sociale  */
+
+.se-nourrir{
+  position: relative;
+  background-color: black;
+}
+
+/* Page Conclusion */
+
+.conclusion{
+  position: relative;
+  background-color: black;
+}
+
+
 
 
 

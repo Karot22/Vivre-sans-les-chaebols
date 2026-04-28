@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Déplacer 2</title>
+    <title>Trouver à boire</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="deplacer2">
+<body class="trouver-boire">
 
     <!-- Bouton menu -->
 <div id="menuBtn" class="menu-btn">
@@ -19,26 +19,24 @@
 
 <!-- Menu -->
 <div id="menu" class="menu">
-  <h2>Menu</h2>
 
   <div class="menu-links">
-    <div class="menu-item" id="goDual">Accueil</div>
-    <div class="menu-item" id="goDoc">Documentaire</div>
-    <div class="menu-item" id="goAnnexe">Annexe</div>
-    <div class="menu-item" id="goLegal">Mentions légales</div>
+    <div class="menu-item" id="goDual"><a href="dual.html">Accueil</a></div>
+    <div class="menu-item" id="goDoc"><a href="documentaire.html">Regarder le documentaire en entier</a></div>
+    <div class="menu-item" id="goAnnexe"><a href="annexes.html">Annexes</a></div>
+    <div class="menu-item" id="goLegal"><a href="mentions-legales.html">Mentions légales</a></div>
   </div>
 
   <div class="menu-lang">
-    <p>Langue :</p>
+    <p>Langues :</p>
     <button data-lang="fr">FR</button>
     <button data-lang="en">EN</button>
     <button data-lang="kr">KR</button>
   </div>
 </div>
 
-
-    <div class="deplacer">
-        <iframe class="vid" id="vidDeplacer2" src="https://player.vimeo.com/video/1096384424?h=f4a5a934dc&color=ffffff&title=0&byline=0&portrait=0"
+    <div class="boire">
+        <iframe class="vid" id="vidTrouverBoire" src="https://player.vimeo.com/video/1097036952?h=43a64563f3&autoplay=0&title=0&byline=0&portrait=0"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen>
@@ -54,11 +52,9 @@
     
     <div class="cacher">    
         <div class="boutons">
-            <div class="chemin" id="cheminT"><p>Voir le chemin tracé</p></div>
-            <div class="questions" id="questionsM">
-                <p>Poser des questions à Minseo</p>
-                <img src="img/marcher.png" class="shape s2">
-            </div>
+            <div class="info-complementaire" id="itw2"><p>Voir l'interview complète</p></div>
+            <div class="info-complementaire" id="mini-jeu"><p>Mini-jeu</p></div>
+            <div class="suite" id="poserQ"><p>Poser d'autres questions à Minseo</p></div>
         </div>
     </div>
 
