@@ -9,37 +9,10 @@
 
 <body class="intro">
 
-    <!-- Bouton menu -->
-<div id="menuBtn" class="menu-btn">
-  <img id="menuIcon" src="img/menu.png" alt="menu">
-</div>
-
-<!-- Overlay -->
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<!-- Menu -->
-<div id="menu" class="menu">
-  <h2>Menu</h2>
-
-  <div class="menu-links">
-    <div class="menu-item" id="goDual">Accueil</div>
-    <div class="menu-item" id="goDoc">Documentaire</div>
-    <div class="menu-item" id="goAnnexe">Annexes</div>
-    <div class="menu-item" id="goLegal">Mentions légales</div>
-  </div>
-
-  <div class="menu-lang">
-    <p>Langues :</p>
-    <button data-lang="fr">FR</button>
-    <button data-lang="en">EN</button>
-    <button data-lang="kr">KR</button>
-  </div>
-</div>
+   <?php include 'menu.php';?>
 
 
     <div class="Introduction">
-        <div class="test" id="test"><a href="test.php">Test</a></div>
-
         <iframe class="vid" id="vidIntroduction" src="https://player.vimeo.com/video/1097036952?h=43a64563f3&autoplay=0&title=0&byline=0&portrait=0"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
@@ -58,7 +31,6 @@
         <div class="boutons">
             <div class="info-complementaire" id="apr1"><p>Approfondissement historique</p></div>
             <div class="info-complementaire" id="chaebolsvs"><p>Différences entre Chaebol et grande entreprise</p></div>
-            <div class="info-complementaire"><a href="test.php">Test</a></div>
             <div class="suite" id="preparer1"><p>Se préparer à partir</p></div>
         </div>
     </div>
