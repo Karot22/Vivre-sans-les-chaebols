@@ -9,32 +9,7 @@
 
 <body class="deplacer2">
 
-    <!-- Bouton menu -->
-<div id="menuBtn" class="menu-btn">
-  <img id="menuIcon" src="img/menu.png" alt="menu">
-</div>
-
-<!-- Overlay -->
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<!-- Menu -->
-<div id="menu" class="menu">
-
-  <div class="menu-links">
-    <div class="menu-item" id="goDual">Accueil</div>
-    <div class="menu-item" id="goDoc">Documentaire</div>
-    <div class="menu-item" id="goAnnexe">Annexes</div>
-    <div class="menu-item" id="goLegal">Mentions légales</div>
-  </div>
-
-  <div class="menu-lang">
-    <p>Langues :</p>
-    <button data-lang="fr">FR</button>
-    <button data-lang="en">EN</button>
-    <button data-lang="kr">KR</button>
-  </div>
-</div>
-
+    <?php include 'menu.php';?>
 
     <div class="deplacer-2">
         <iframe class="vid" id="vidDeplacer2" src="https://player.vimeo.com/video/1005118522?h=6329c725a8&texttrack=fr"
@@ -67,7 +42,7 @@
     </div>
     
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

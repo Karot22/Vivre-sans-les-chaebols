@@ -3,37 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Introduction</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Déplacer 1</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="deplacer1">
 
-    <!-- Bouton menu -->
-<div id="menuBtn" class="menu-btn">
-  <img id="menuIcon" src="img/menu.png" alt="menu">
-</div>
-
-<!-- Overlay -->
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<!-- Menu -->
-<div id="menu" class="menu">
-
-  <div class="menu-links">
-    <div class="menu-item" id="goDual">Accueil</div>
-    <div class="menu-item" id="goDoc">Documentaire</div>
-    <div class="menu-item" id="goAnnexe">Annexes</div>
-    <div class="menu-item" id="goLegal">Mentions légales</div>
-  </div>
-
-  <div class="menu-lang">
-    <p>Langue :</p>
-    <button data-lang="fr">FR</button>
-    <button data-lang="en">EN</button>
-    <button data-lang="kr">KR</button>
-  </div>
-</div>
+    <?php include 'menu.php';?>
 
 
     <div class="deplacer">
@@ -69,7 +45,7 @@
     </div>
     
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

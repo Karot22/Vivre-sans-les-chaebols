@@ -4,39 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Trouver à boire</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="trouver-boire">
 
-    <!-- Bouton menu -->
-<div id="menuBtn" class="menu-btn">
-  <img id="menuIcon" src="img/menu.png" alt="menu">
-</div>
-
-<!-- Overlay -->
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<!-- Menu -->
-<div id="menu" class="menu">
-
-  <div class="menu-links">
-    <div class="menu-item" id="goDual"><a href="dual.html">Accueil</a></div>
-    <div class="menu-item" id="goDoc"><a href="documentaire.html">Regarder le documentaire en entier</a></div>
-    <div class="menu-item" id="goAnnexe"><a href="annexes.html">Annexes</a></div>
-    <div class="menu-item" id="goLegal"><a href="mentions-legales.html">Mentions légales</a></div>
-  </div>
-
-  <div class="menu-lang">
-    <p>Langues :</p>
-    <button data-lang="fr">FR</button>
-    <button data-lang="en">EN</button>
-    <button data-lang="kr">KR</button>
-  </div>
-</div>
+    <?php include 'menu.php';?>
 
     <div class="boire">
-        <iframe class="vid" id="vidTrouverBoire" src="https://player.vimeo.com/video/1096384424?h=f4a5a934dc&color=ffffff&title=0&byline=0&portrait=0"
+        <iframe class="vid" id="vidTrouverBoire" src="https://player.vimeo.com/video/1097036952?h=43a64563f3&autoplay=0&title=0&byline=0&portrait=0"
         frameborder="0"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen>
@@ -67,7 +43,7 @@
     </div>
     
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
