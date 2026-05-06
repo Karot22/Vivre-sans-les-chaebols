@@ -4,36 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Discussion 1</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="discussion1">
 
-    <!-- Bouton menu -->
-<div id="menuBtn" class="menu-btn">
-  <img id="menuIcon" src="img/menu.png" alt="menu">
-</div>
-
-<!-- Overlay -->
-<div id="menuOverlay" class="menu-overlay"></div>
-
-<!-- Menu -->
-<div id="menu" class="menu">
-
-  <div class="menu-links">
-    <div class="menu-item" id="goDual">Accueil</div>
-    <div class="menu-item" id="goDoc">Documentaire</div>
-    <div class="menu-item" id="goAnnexe">Annexes</div>
-    <div class="menu-item" id="goLegal">Mentions légales</div>
-  </div>
-
-  <div class="menu-lang">
-    <p>Langue :</p>
-    <button data-lang="fr">FR</button>
-    <button data-lang="en">EN</button>
-    <button data-lang="kr">KR</button>
-  </div>
-</div>
+    <?php include 'menu.php';?>
 
 
     <div class="discussion">
@@ -43,17 +19,21 @@
         allowfullscreen>
         </iframe>
         <div class="next">
-            <img class="passer" id="skip" src="img/fleche-droite-2.png">
+            <img class="passer" id="skip" src="../img/fleche-droite-2.png">
             <p>Passer la vidéo</p>
         </div>
+        <div class="previous">
+            <img class="passer" id="retour" src="../img/fleche-gauche-2.png" onclick="history.back()">
+            <p>Retour</p>
+        </div>
         <div class="replay" id="replayBtn">
-            <img class="rejouer" id="replays" src="img/rejouer.png">
+            <img class="rejouer" id="replays" src="../img/rejouer.png">
         </div>
     </div>
     
     <div class="cacher">    
         <div class="boutons">
-            <div class="info-complementaire" id="cultureT"><p>Culture du travail en Corée du Sud</p></div>
+            <div class="info-complementaire" id="affaireSK"><p>L’affaire du SK Chemical et humidifier </p></div>
             <div class="info-complementaire" id="cultureU"><p>Culture universitaire liée aux Chaebols</p></div>
             <div class="suite" id="chercherB"><p>Aller chercher à boire</p></div>
         </div>
@@ -68,7 +48,7 @@
     </div>
     
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

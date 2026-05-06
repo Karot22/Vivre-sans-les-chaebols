@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Introduction</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="intro">
@@ -19,11 +19,11 @@
         allowfullscreen>
         </iframe>
         <div class="next">
-            <img class="passer" id="skip" src="img/fleche-droite-2.png">
+            <img class="passer" id="skip" src="../img/fleche-droite-2.png">
             <p>Passer la vidéo</p>
         </div>
         <div class="replay" id="replayBtn">
-            <img class="rejouer" id="replays" src="img/rejouer.png">
+            <img class="rejouer" id="replays" src="../img/rejouer.png">
         </div>
     </div>
     
@@ -44,7 +44,7 @@
     </div>
     
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
