@@ -69,7 +69,7 @@ document.querySelectorAll(".flag").forEach(flag => {
   flag.addEventListener("click", () => {
     const lang = flag.dataset.lang;
     localStorage.setItem("lang", lang);
-    window.location.href = "definition.php";
+    window.location.href = "php/definition.php";
   });
 });
 
