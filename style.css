@@ -324,8 +324,8 @@ p {
   z-index: 5; */
 
   position: fixed;
-  top: 10px;
-  left: 1190px;
+  top: 5%;
+  left: 93%;
   z-index: 5;
 
   opacity: 1;
@@ -357,8 +357,8 @@ p {
 
 .previous{
   position: fixed;
-  top: 530px;
-  left: 25px;
+  top: 91%;
+  left: 2%;
   z-index: 5;
 
   opacity: 1;
@@ -570,8 +570,9 @@ p {
   pointer-events: none;
   transition: 0.5s;
 
-  top: 525px;
-  left: 1190px;
+  top: 90%;
+  left: 93%;
+
 
   cursor: pointer;
 } 
