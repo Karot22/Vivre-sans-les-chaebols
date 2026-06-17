@@ -4,16 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Définition</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 
 <body class="def">
-    <div class="content hidden" id="content">
-        <p id="definition"></p>
-        <button onclick="goNext()">→</button>
+    <div class="drapeaux">
+            <img src="img/flag-fr.jpg" class="drapeau" data-lang="fr">
+            <img src="img/flag-sc.jpg" class="drapeau" data-lang="kr">
+            <img src="img/flag-eng.jpg" class="drapeau" data-lang="en">
     </div>
 
-    <script src="script.js"></script>
+    <div class="content hidden" id="content">
+        <p id="definition" data-translate="definition"></p>
+        <div class="def-next">
+            <img class="passer" id="skip" src="img/fleche-droite-2.png" onclick="goNext()">
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <title>Carte</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="map.css">
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="corps">
+    <!-- Save for Web Slices (carte-tracee (4).svg) -->
+<div class="map">
+    <img src="img/map-pixel_5.png" width="1920" height="1080" alt="" class="carte">
+    <!-- icones cliquables -->
+     <a href="#" id="niveau-intro" class="niveau" data-level="0" data-video="https://player.vimeo.com/video/1189727859?autoplay=1&byline=0">
+        <img src="img/rouge.png" class="icone intro clignote">
+    </a>
+    <a href="#" id="niveau-deplacer1" class="niveau" data-level="1" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+        <img src="img/rouge.png" class="icone deplacer-part-1" id="se-deplacer-part-1">
+    </a>
+
+    <a href="#" id="niveau-discussion1" class="niveau" data-level="2" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+        <img src="img/rouge.png" class="icone discussion-part-1" id="discuter-part-1">
+    </a>
+    <a href="#" id="niveau-boire" class="niveau" data-level="3" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+        <img src="img/rouge.png" class="icone trouver" id="trouver-a-boire">
+    </a>
+    <!-- <a href="#" id="niveau-discussion2" class="niveau" data-level="4" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+        <img src="img/rouge.png" class="icone discussion-part-2" id="discuter-part-2">
+    </a> -->
+    <a href="#" id="niveau-nourrir" class="niveau" data-level="4" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+        <img src="img/rouge.png" class="icone se-nourrir" id="nourrir">
+    </a>
+    <a href="#" id="niveau-conclusion" class="niveau" data-level="5" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+        <img src="img/rouge.png" class="icone conclu" id="conclusion">
+    </a>
+
+    <!-- éléments complémentaires cliquable -->
+     <div id="menuBtn" class="menu-btn">
+  <img id="menuIcon" src="img/menu-2.png" alt="menu">
+</div>
+
+<div id="menuOverlay" class="menu-overlay"></div>
+
+<div id="menu" class="menu">
+<div class="menu-haut">
+  <div class="menu-links">
+    <div class="menu-item" id="goDual"><a href="index.html" data-translate="menuHome">Accueil</a></div>
+    <div class="menu-item" id="goDoc"><a href="dual.html" data-translate="menuDoc">Regarder le documentaire</a></div>
+    <div class="menu-item" id="goAnnexe"><a href="equipe.html" data-translate="menuAnnexe">Annexes</a></div>
+    <div class="menu-item" id="goLegal"><a href="mentions-legales.html" data-translate="menuLegal">Mentions légales</a></div>
+  </div>
+
+  <div class="menu-lang">
+    <p data-translate="menuLang">Langues :</p>
+    <button data-lang="fr">FR</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="kr">KR</button>
+  </div>
+</div>
+
+  <div class="logos">
+    <img src="img/logo-dongeui-blanc.png" class="logo">
+    <img src="img/logo-univ-gustave-eiffel-1.png" class="logo">
+    <img src="img/logo-cmw-1.png" class="logo">
+  </div> 
+</div>
+
+     <img src="img/chronologie-pixel.png" class="imageComplementaire" id="apr1">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="apr1"> -->
+     <img src="img/vs-pixel.png" class="imageComplementaire" id="vs">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="vs"> -->
+     <img src="img/ce-que-pensent-les-coreens-chaebols-pixel.png" class="imageComplementaire" id="eleves" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="eleves" data-video="https://player.vimeo.com/video/1189727859?autoplay=1"> -->
+     <img src="img/boycotter-pixel.png" class="imageComplementaire" id="boycott">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="boycott"> -->
+     <img src="img/marcher-pixel.png" class="imageComplementaire" id="se-deplacer-en-coree">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="se-deplacer-en-coree"> -->
+     <img src="img/crise-fmi-pixel.png" class="imageComplementaire" id="crise-fmi">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="crise-fmi"> -->
+     <img src="img/scandale-pixel.png" class="imageComplementaire" id="scandale">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="scandale"> -->
+     <!-- <img src="img/interview-pixel.png" class="imageComplementaire" id="interview-monsieur" data-video="https://player.vimeo.com/video/1189727859?autoplay=1"> -->
+     <img src="img/interview-pixel.png" class="imageComplementaire" id="interview-dame" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="interview-dame" data-video="https://player.vimeo.com/video/1189727859?autoplay=1"> -->
+     <img src="img/interview-pixel.png" class="imageComplementaire" id="interview-fille-boycott" data-video="https://player.vimeo.com/video/1189727859?autoplay=1">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="interview-fille-boycott" data-video="https://player.vimeo.com/video/1189727859?autoplay=1"> -->
+     <img src="img/scandale-pixel.png" class="imageComplementaire" id="affaire-scandaleuse">
+     <!-- <img src="img/rouge.png" class="imageComplementaire" id="affaire-scandaleuse"> -->
+
+
+    <div class="admin-buttons">
+
+        <button id="unlockAllBtn">
+            Débloquer tout
+        </button>
+
+        <button id="resetAllBtn">
+            Réinitialiser
+        </button>
+
+    </div>
+
+</div>
+
+<!-- overlay des vidéos -->
+
+<div id="videoOverlay" class="videoOverlay">
+    <div class="videoContainer">
+        
+        <img src="img/croix-rouge.png"
+             id="closeVideo"
+             class="closeVideo">
+
+
+        <iframe
+            id="videoFrame"
+            src=""
+            allow="autoplay; fullscreen">
+        </iframe>
+        
+
+    </div>
+</div>
+<!-- -->
+
+
+<div class="slider" id="slider">
+    <div class="slider-content" id="sliderContent">
+    </div>
+
+    <div class="closeSlider" id="closeSlider">✕</div>
+</div>
+
+<div id="tooltipLock"></div>
+<div id="tooltipChapter"></div>
+
+
+<script src="translations.js"></script>
+<script src="map.js"></script>
+<script src="map-slider.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+</body>
+
+</html>
