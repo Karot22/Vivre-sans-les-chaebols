@@ -177,6 +177,8 @@ function mettreAJourContenus() {
         "consulter"
       );
 
+      
+
       let debloque = false;
       if (typeof config.unlock === "number") {
         debloque = progression > config.unlock;
@@ -477,7 +479,7 @@ function toggleMenu() {
   const open = menu.classList.contains("show");
 
   // icône
-  menuIcon.src = open ? "img/croix-rouge.png" : "img/menu-2.png";
+  menuIcon.src = open ? "img/croix-rouge.png" : "img/menu-3.png";
 
   //  pause vidéo 
  if (open && player) {
@@ -488,7 +490,7 @@ function toggleMenu() {
 function closeMenu() {
   menu.classList.remove("show");
   menuOverlay.classList.remove("show");
-  menuIcon.src = "img/menu-2.png";
+  menuIcon.src = "img/menu-3.png";
 }
 
 if (menuBtn) menuBtn.onclick = toggleMenu;

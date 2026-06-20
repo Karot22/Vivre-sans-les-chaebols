@@ -304,7 +304,7 @@ if (document.body.classList.contains("fond-choix")) {
 }
 const hero = document.getElementById("hero");
 
-const defaultBg = "img/fond-grain.jpeg";
+const defaultBg = "img/fond-interactif-2.png";
 
 document.querySelectorAll(".btn").forEach(btn => {
 

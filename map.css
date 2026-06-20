@@ -39,63 +39,7 @@ div{
     image-rendering: pixelated;
 }
 
-/* @media (min-width: 1920px) {} */
 
-@media (max-width: 1920px) {
-  .carte {height: auto;}
-  .admin-buttons button {padding: 10px 15px; }
-  .admin-buttons{display:flex; flex-direction:column; gap:10px;}
-  .menu-btn img{width:35px; height:35px;}
-  .menu-item{font-size:20px;}
-  .menu-lang button{margin:5px; padding:10px;}
-  .slide-content{display:grid; grid-template-columns: 1fr 1fr;}
-  .closeSlider{font-size: 30px;}
-  .nav{font-size: 4rem;}
-  .prev{left: 20px;}
-  .next{right: 20px;}
-}
-
-@media (max-width: 800px) {
-  .admin-buttons{display: flex; gap: 5px;}
-  .admin-buttons button {padding: 8px 10px; font-size: x-small; }
-  .menu-btn img{width: 25px; height: 25px;}
-  .menu-item{font-size: 15px;}
-  .menu-lang p {font-size: 15px;}
-  .menu-lang button{margin: 5px; padding: 5px;}
-  .slide-image{display: none;}
-  .slide-content{display:grid; grid-template-columns: 1fr;}
-  .closeSlider{font-size: 20px;}
-  .nav{font-size: 2rem;}
-  .prev{left: 14px;}
-  .next{right: 14px;}
-
-
-}
-
-@media (min-width: 200px) and (max-width: 600px) {
-  .admin-buttons{display: flex; gap: 2px;}
-  .admin-buttons button {padding: 3px 4px;  font-size: 0.44rem; }
-  .menu-btn img{width: 15px; height: 15px;}
-  .menu-item{font-size: 13px;}
-  .menu-lang p {font-size: 13px;}
-  .slide-image{display: none;}
-  .slide-content{display:grid; grid-template-columns: 1fr;}
-  .closeSlider{font-size: 15px;}
-  .nav{font-size: 1rem;}
-  .prev{left: 11px;}
-  .next{right: 11px;}
-
-}
-
-@media (max-width: 470px) {
-  .admin-buttons button {font-size: 0.4rem;}
-  .slide-image{display: none;}
-  .slide-content{display:grid; grid-template-columns: 1fr;}
-  .nav{font-size: 1rem;}
-  .prev{left: 5px;}
-  .next{right: 5px;}
-
-}
 
 /* .icon{
     filter: grayscale(80%);
@@ -299,7 +243,7 @@ div{
 
 .closeVideo{
     position:absolute;
-    top:-50px;
+    top:-33px;
     right:0;
 
     width:40px;
@@ -763,8 +707,8 @@ div{
 }
 
 .timeline-moyens {
-  width: 90%;
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   /* margin: 50px auto; */
   margin-right: 50px;
   margin-left: 50px;
@@ -780,7 +724,7 @@ div{
 .timeline-content-M2  {
   /* padding: 20px; */
   border-radius: 10px;
-  max-width: 450px;
+  /* max-width: 450px; */
   flex: 1;
   font-size: large;
 }
@@ -795,8 +739,8 @@ div{
 
 .v-hyundai {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 
@@ -809,10 +753,12 @@ div{
 }
 
 .timeline-moyensD {
-  display: flex;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
   align-items: stretch; /* 🔥 clé pour hauteur identique */
   justify-content: center;
   gap: 30px;
+  /* grid-auto-flow: column; */
 }
 
 .timeline-moyensD.gauche {
@@ -900,8 +846,8 @@ div{
 
 .hsr {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 
@@ -947,7 +893,8 @@ div{
 /* CONTENU */
 
 .content{
-    display:flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap:50px;
     align-items:flex-start;
 }
@@ -1335,7 +1282,7 @@ div{
     width:100%;
     height:100vh;
     color:white;
-    overflow:hidden;
+    overflow:auto;
 }
 
 /* ===================== */
@@ -1343,7 +1290,7 @@ div{
 /* ===================== */
 
 .slide-viewer{
-    height:100%;
+    /* height:100%; */
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1740,3 +1687,138 @@ h1,h2{
 }
 
 /* FIN Page équipe */
+
+
+
+
+/* @media (min-width: 1920px) {} */
+
+
+@media (min-width:1921px){
+  .definition-text{font-size: 1.5rem}
+  .chips span{font-size: 1.5rem;}
+  .card{font-size: 1.5rem;}
+  .card p{font-size: 1.3rem;}
+  .compare-grid{font-size: 1.5rem;}
+  .header{font-size: 1.5rem;}
+  .cell{font-size: 1.5rem;}
+  .slide-text h2{font-size:larger;}
+  .slide-text p{font-size:1.3rem;}
+  .timeline-boycott{height: 100vh;}
+  .timeline-boycott-title{font-size: 1.5rem;}
+  .timeline-boycott-content.actif{font-size: 1.4rem;}
+  .liste{font-size: 1.5rem;}
+  .timeline-content-M2{font-size: 1.5rem;}
+  .timeline-ferro.full .timeline-content-ferro{font-size: 1.5rem;}
+  .hsr img{width: 92%;}
+  .etape{font-size: 1.5rem;}
+  .etape p{font-size: 1.4rem;}
+  .hero-news p{font-size: 1.5rem;}
+  .text-card{font-size: 1.4rem;}
+  .pixel-timeline h2{font-size: 1.9rem;}
+  .event-card{font-size: 1.5rem;}
+  .year{font-size: 1.5rem;}
+  .quote-card{font-size: 1.5rem;}
+  .full-card{font-size: 1.5rem;}
+  .text-card-2{font-size: 1.5rem;}
+  .text-card-2{font-size: 1.5rem;}
+  .conclusion-card{font-size: 1.5rem;}
+  .chapo{font-size: 1.5rem;}
+  .left-column p{font-size: 1.5rem;}
+  .section-title{font-size: 1.5rem;}
+  .quote-box{font-size: 1.5rem;}
+  .menu-item{font-size: 1.5rem;}
+  .menu-lang p{font-size: 1.5rem;}
+  #tooltipLock{font-size: 1.5rem;}
+  #tooltipChapter{font-size: 1.5rem;}
+  .menu-btn img{width: 40px; height: 40px;}
+  .team-section{font-size: 1.3rem;}
+
+
+}
+
+
+@media (max-width: 1920px) {
+  .carte {height: auto;}
+  .admin-buttons button {padding: 10px 15px; }
+  .admin-buttons{display:flex; flex-direction:column; gap:10px;}
+  .menu-btn img{width:35px; height:35px;}
+  .menu-item{font-size:20px;}
+  .menu-lang button{margin:5px; padding:10px;}
+  .slide-content{display:grid; grid-template-columns: 1fr 1fr;}
+  .closeSlider{font-size: 30px;}
+  .nav{font-size: 4rem;}
+  .prev{left: 20px;}
+  .next{right: 20px;}
+  .timeline-moyensD{display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column;}
+  .v-hyundai{display: flex; flex-direction: column;}
+  .hsr{display: flex; flex-direction: column;}
+  .timeline-content-M2{max-width: 450px;}
+}
+
+@media (max-width: 800px) {
+  .admin-buttons{display: flex; gap: 5px;}
+  .admin-buttons button {padding: 8px 10px; font-size: x-small; }
+  .menu-btn img{width: 25px; height: 25px;}
+  .menu-item{font-size: 15px;}
+  .menu-lang p {font-size: 15px;}
+  .menu-lang button{margin: 5px; padding: 5px;}
+  .slide-image{display: none;}
+  .slide-content{display:grid; grid-template-columns: 1fr;}
+  .closeSlider{font-size: 20px;}
+  .nav{font-size: 2rem;}
+  .prev{left: 14px;}
+  .next{right: 14px;}
+  .timeline-moyensD{display: grid; grid-template-columns:none; grid-auto-flow:none;}
+  .v-hyundai{display: none;}
+  .hsr{display: none; }
+  .timeline-content-M2{max-width: 90%;  width: 100%;}
+  .timeline-moyens{margin-left: 39px; margin-right: 0; margin-top: 21px; margin-bottom: 23px;}
+.article-grid{grid-template-columns: none;}
+.photo-card{display: none;}
+.event{grid-template-columns: none;}
+.year{display: none;}
+.content{grid-template-columns: 1fr;}
+.label{display: none;}
+.empty{display: none;}
+.compare-grid{grid-template-columns: 1fr 1fr;}
+.closeVideo{top:-25px;}
+
+
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .admin-buttons{display: flex; gap: 2px;}
+  .admin-buttons button {padding: 3px 4px;  font-size: 0.44rem; }
+  .menu-btn img{width: 15px; height: 15px;}
+  .menu-item{font-size: 13px;}
+  .menu-lang p {font-size: 13px;}
+  .slide-image{display: none;}
+  .slide-content{display:grid; grid-template-columns: 1fr;}
+  .closeSlider{font-size: 15px;}
+  .nav{font-size: 1rem;}
+  .prev{left: 11px;}
+  .next{right: 11px;}
+  .timeline-moyensD{display: grid; grid-template-columns:none;}
+  .v-hyundai{display: none;}
+  .hsr{display: none; }
+  .timeline-content-M2{max-width: 90%;  width: 100%;}
+  .timeline-moyens{margin-left: 39px; margin-right: 0; margin-top: 21px; margin-bottom: 23px;}
+  .closeVideo{top:34px;}
+
+}
+
+@media (max-width: 470px) {
+  .admin-buttons button {font-size: 0.4rem;}
+  .slide-image{display: none;}
+  .slide-content{display:grid; grid-template-columns: 1fr;}
+  .nav{font-size: 1rem;}
+  .prev{left: 5px;}
+  .next{right: 5px;}
+  .timeline-moyensD{display:grid; grid-template-columns:none;}
+  .v-hyundai{display: none;}
+  .hsr{display: none; }
+  .timeline-content-M2{max-width: 90%; width: 100%;}
+  .timeline-moyens{margin-left: 25px; margin-right: 0; margin-top: 21px; margin-bottom: 23px;}
+    .closeVideo{top:55px;}
+}

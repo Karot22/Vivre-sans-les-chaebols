@@ -27,6 +27,8 @@ div{
   font-family: fontText; /* use font */
 }
 
+
+
 /* Menu */ 
 /* bouton menu */
 .menu-btn {
@@ -1577,5 +1579,34 @@ div{
 
 
 
+@media (min-width:1921px){
+  #title{font-size: 3rem;}
+  #subtitle{font-size: 1.5rem;}
+  .flags img{width: 62px;}
+  .def p{font-size: 1.5rem;}
+  .btn-interactif{font-size: 40px;}
+  .btn-documentaire{font-size: 21px;}
+  .description{font-size: 1.5rem; width:575px;}
 
+}
 
+@media (max-width: 1920px) {
+  
+}
+
+@media (max-width: 800px) {
+  #title{margin-left: 3%; margin-right: 3%;}
+  #subtitle{margin-left: 3%; margin-right: 3%;}
+  .def p{margin-left: 3%; margin-right: 3%;}
+  .drapeau{width: 60px;}
+  .closeVideo{top:-27px;}
+}
+
+@media (min-width: 200px) and (max-width: 600px) {
+  .closeVideo{top:16px;}
+  
+}
+
+@media (max-width: 470px) {
+  
+}
