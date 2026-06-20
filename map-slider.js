@@ -128,7 +128,6 @@ function loadSlide(index){
     document.getElementById("slideCaption").innerHTML =
         texts[lang][slides[index].caption];
 
-    
 
     
 }
@@ -156,6 +155,25 @@ document
 });
 
 loadSlide(0);
+
+document.addEventListener("keydown", (e) => {
+
+    // Flèche droite
+    if (e.key === "ArrowRight") {
+        loadSlide(
+            (current + 1) % slides.length
+        );
+    }
+
+    // Flèche gauche
+    if (e.key === "ArrowLeft") {
+        loadSlide(
+            (current - 1 + slides.length)
+            % slides.length
+        );
+    }
+
+});
 
 
     appliquerTraductions();
@@ -573,6 +591,7 @@ if (criseFMI) {
         <div class="grain">
         
         <br><br>
+
         <div class="crise-container">
 
     <div class="etape active">
@@ -628,7 +647,7 @@ if (criseFMI) {
     <button id="suivants">►</button>
 
 </div>
-        
+      
     
 </div>
   
@@ -669,6 +688,20 @@ document.getElementById("prev").onclick = () => {
 
     showStep(current);
 };
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "ArrowRight") {
+        e.preventDefault();
+        document.getElementById("suivants").click();
+    }
+
+    if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        document.getElementById("prev").click();
+    }
+
+});
 
     appliquerTraductions();
     slider.classList.add("show");

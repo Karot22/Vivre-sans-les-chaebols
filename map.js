@@ -1,4 +1,14 @@
-
+function getVideoUrl(baseUrl) {
+  const lang = localStorage.getItem("lang") || "fr";
+  let subtitle = "fr";
+  if (lang === "en") {
+    subtitle = "en";
+  }
+  else if (lang === "kr") {
+    subtitle = "ko";
+  }
+  return `${baseUrl}?autoplay=1&texttrack=${subtitle}`;
+}
 
 
 // ==========================
@@ -354,7 +364,8 @@ document
       if(!video)
         return;
 
-      frame.src = video;
+    //   frame.src = video;
+    frame.src = getVideoUrl(video);
 
       overlay.classList.add("show");
 
@@ -414,7 +425,8 @@ document.querySelectorAll(".niveau").forEach((btn) => {
 
     niveauActuel = parseInt(btn.dataset.level);
 
-    frame.src = btn.dataset.video;
+    frame.src = getVideoUrl(btn.dataset.video);
+    // frame.src = btn.dataset.video;
 
     overlay.classList.add("show");
     setTimeout(() => {

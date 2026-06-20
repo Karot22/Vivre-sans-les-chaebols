@@ -10,10 +10,11 @@ const texts = {
       "Join a French woman and her Korean friend as they explore what life would be like without <br> the large conglomerates that dominate the South Korean economy.",
     definition:
       "Chaebol (재벌) <br><br>A large business conglomerate in South Korea, typically owned and run by a single family. <br> It can be thought of as a family managing several companies under a single name. <br><br>",
-    interactif: "Explore the route taken",
+    click_next:"Click anywhere to continue",
+    interactif: "Explore with us",
     interactifDescription:
       "Explore the map of the route taken during this experience and learn more about the role of chaebols in Korean society.",
-    documentaire: "Watch the documentary",
+    documentaire: "Watch the full documentary",
     documentaireDescription:
       "Watch the full documentary in which two students take on the challenge of spending a day without the chaebols.",
     btnRetour: "Return",
@@ -61,10 +62,11 @@ const texts = {
       "Accompagnez une française et son amie coréenne dans leur découverte de ce qu'impliquerait la vie sans <br> ces grands conglomérats qui dominent l'économie sud-coréenne.",
     definition:
       "Chaebol (재벌) n.m<br><br>Grand conglomérat commercial en Corée du Sud, généralement détenu et dirigé par une seule famille. <br> On peut le considérer comme une famille gérant plusieurs entreprises sous un même nom. <br><br>",
-    interactif: "Explorer la trajet parcouru",
+    click_next:"Cliquer n'importe où pour continuer.",
+      interactif: "Explorer avec nous",
     interactifDescription:
       "Naviguez sur la carte du chemin parcouru lors de cette expérience et découvrez en plus sur la place des Chaebols dans la société coréenne.",
-    documentaire: "Regarder le documentaire",
+    documentaire: "Regarder le documentaire complet",
     documentaireDescription:
       "Découvrez l'intégralité du documentaire où deux étudiantes se prêtent au défi de passer une journée sans les Chaebols.",
     btnRetour: "Retour",
@@ -133,10 +135,11 @@ const texts = {
       "한국 경제를 장악하고 있는 거대 재벌들이 없다면 삶이 어떻게 달라질지 <br> 알아보는 프랑스 여성과 그녀의 한국인 친구의 여정에 함께해 보세요.",
     definition:
       "재벌 (Chaebol) <br><br>한국의 대형 상업계 그룹으로, 대개 한 가족이 소유하고 경영한다. <br> 이는 하나의 이름 아래 여러 기업을 운영하는 가족 기업으로 볼 수 있다. <br><br>",
-    interactif: "경로 확인하기",
+    click_next:"계속하려면 아무 곳이나 클릭하세요",
+    interactif: "우리와 함께 탐험해 보세요",
     interactifDescription:
       "이번 체험에서 걸어온 길을 지도에서 살펴보고, 한국 사회에서 재벌이 차지하는 위치에 대해 더 자세히 알아보세요.",
-    documentaire: "다큐멘터리 보기",
+    documentaire: "다큐멘터리 전체를 시청하세요",
     documentaireDescription:
       "두 여대생이 ‘재벌 없이 하루 보내기’라는 도전에 나선 다큐멘터리의 전체 내용을 확인해 보세요.",
     btnRetour: "뒤로",
@@ -250,17 +253,47 @@ flags.forEach((flag) => {
 });
 
 // page dual
-if (document.body.classList.contains("dual")) {
-  document.querySelector(".titre-interactif").onclick = () => {
+// if (document.body.classList.contains("dual")) {
+//   document.querySelector(".titre-interactif").onclick = () => {
+//     window.location.href = "map-trace.html";
+//   };
+
+//   const openDocumentaire = document.getElementById("openDocumentaire");
+//   const overlay = document.getElementById("videoOverlay");
+//   const frame = document.getElementById("videoFrame");
+//   const closeVideo = document.getElementById("closeVideo");
+//   openDocumentaire.onclick = () => {
+//     frame.src = "https://player.vimeo.com/video/1189727859?autoplay=1";
+//     overlay.classList.add("show");
+//   };
+
+//   closeVideo.onclick = () => {
+//     overlay.classList.remove("show");
+//     frame.src = "";
+//   };
+// }
+
+// page dual
+
+if (document.body.classList.contains("fond-choix")) {
+  document.querySelector(".btn-interactif").onclick = () => {
     window.location.href = "map-trace.html";
   };
 
-  const openDocumentaire = document.getElementById("openDocumentaire");
+  const openDocumentaire = document.getElementById("btn-documentaire");
   const overlay = document.getElementById("videoOverlay");
   const frame = document.getElementById("videoFrame");
   const closeVideo = document.getElementById("closeVideo");
   openDocumentaire.onclick = () => {
-    frame.src = "https://player.vimeo.com/video/1189727859?autoplay=1";
+    let lang = localStorage.getItem("lang") || "fr";
+
+    if(lang === "kr"){
+        lang = "ko";
+    }
+
+    frame.src =
+      `https://player.vimeo.com/video/1189727859?autoplay=1&texttrack=${lang}`;
+
     overlay.classList.add("show");
   };
 
@@ -269,6 +302,60 @@ if (document.body.classList.contains("dual")) {
     frame.src = "";
   };
 }
+const hero = document.getElementById("hero");
+
+const defaultBg = "img/fond-grain.jpeg";
+
+document.querySelectorAll(".btn").forEach(btn => {
+
+    btn.addEventListener("mouseenter", () => {
+
+        hero.style.backgroundImage =
+        `url(${btn.dataset.bg})`;
+
+    });
+
+    btn.addEventListener("mouseleave", () => {
+
+        hero.style.backgroundImage =
+        `url(${defaultBg})`;
+
+    });
+
+});
+
+const description = document.getElementById("description-hover");
+
+document.querySelectorAll(".btn").forEach(btn => {
+
+    btn.addEventListener("mouseenter", () => {
+
+        const lang = localStorage.getItem("lang") || "fr";
+        const key = btn.dataset.translate + "Description";
+
+        description.innerHTML = texts[lang][key];
+        description.classList.add("show");
+
+    });
+
+});
+
+const choix = document.querySelector(".choix");
+
+if (choix && description) {
+
+    choix.addEventListener("mouseleave", () => {
+        description.classList.remove("show");
+    });
+
+}
+
+// document.querySelector(".choix").addEventListener("mouseleave", () => {
+//     description.classList.remove("show");
+// });
+
+
+// fin page dual
 
 // chargement changement
 

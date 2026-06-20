@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 
-<body class="def">
+<body class="def" onclick="goNext()">
     <div class="drapeaux">
-            <img src="img/flag-fr.jpg" class="drapeau" data-lang="fr">
-            <img src="img/flag-sc.jpg" class="drapeau" data-lang="kr">
-            <img src="img/flag-eng.jpg" class="drapeau" data-lang="en">
+        <img src="img/flag-fr.jpg" class="drapeau" data-lang="fr" onclick="event.stopPropagation()">
+        <img src="img/flag-sc.jpg" class="drapeau" data-lang="kr" onclick="event.stopPropagation()">
+        <img src="img/flag-eng.jpg" class="drapeau" data-lang="en" onclick="event.stopPropagation()">
     </div>
 
     <div class="content hidden" id="content">
         <p id="definition" data-translate="definition"></p>
         <div class="def-next">
-            <img class="passer" id="skip" src="img/fleche-droite-2.png" onclick="goNext()">
+            <p data-translate="click_next">Cliquer n'importe où pour continuer.</p>
+            <!-- <img class="passer" id="skip" src="img/fleche-droite-2.png"> -->
         </div>
     </div>
 

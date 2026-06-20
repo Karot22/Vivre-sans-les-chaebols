@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <title>Dual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make your choice</title>
     <link rel="stylesheet" href="style2.css">
 </head>
+<body class="fond-choix">
+    <div class="drapeaux">
+        <img src="img/flag-fr.jpg" class="drapeau" data-lang="fr" onclick="event.stopPropagation()">
+        <img src="img/flag-sc.jpg" class="drapeau" data-lang="kr" onclick="event.stopPropagation()">
+        <img src="img/flag-eng.jpg" class="drapeau" data-lang="en" onclick="event.stopPropagation()">
+    </div>
+    <div class="hero" id="hero">
 
-<body class="dual">
+    <div class="fond"></div>
 
-    <div class="split">
-        <div class="panel left">
-            <div class="panel-content">
-                <h2 data-translate="interactif" class="titre-interactif">Explorer la trajet parcouru</h2>
-                <p data-translate="interactifDescription">Naviguez sur la carte du chemin parcouru lors de cette expérience et découvrez en plus sur la place des Chaebols dans la société coréenne. </p>
-            </div>
-        </div>
+    <div class="choix">
 
-        <div class="panel right">
-            <div class="drapeaux">
-                <img src="img/flag-fr.jpg" class="drapeau" data-lang="fr">
-                <img src="img/flag-sc.jpg" class="drapeau" data-lang="kr">
-                <img src="img/flag-eng.jpg" class="drapeau" data-lang="en">
-            </div>
-            <div class="panel-content">
-                <h2 data-translate="documentaire" class="titre-documentaire" id="openDocumentaire">Regarder le documentaire</h2>
-                <p data-translate="documentaireDescription">Découvrez l'intégralité du documentaire où deux étudiantes se prêtent au défi de passer une journée sans les Chaebols.</p>
-            </div>
-        </div>
+        <button class="btn btn-interactif" data-bg="img/fond-interactif-2.png" data-translate="interactif">
+            Explorer le trajet parcouru
+        </button>
+
+        <button class="btn btn-documentaire" id="btn-documentaire" data-bg="img/documentaire.png" data-translate="documentaire">
+            Regarder le documentaire
+        </button>
+
+         <p id="description-hover" class="description"></p>
+        
+
+        
+
     </div>
 
-    <!-- overlay des vidéos -->
-
+</div>
 <div id="videoOverlay" class="videoOverlay">
     <div class="videoContainer">
 
@@ -49,7 +51,6 @@
 </div>
 <!-- -->
 
-<script src="translations.js"></script>
+  <script src="translations.js"></script>  
 </body>
-
 </html>
