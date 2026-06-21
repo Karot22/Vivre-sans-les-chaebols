@@ -1,3 +1,6 @@
+let current = 0;
+let loadSlide = null;
+
 // slider naissance chaebols
 const apr1 = document.getElementById("apr1");
 
@@ -100,21 +103,12 @@ const slides = [
 
 ];
 
-let current = 0;
+// let current = 0;
 
-function loadSlide(index){
-
+loadSlide = function(index) {
     current = index;
 
-    const lang =
-        localStorage.getItem("lang") || "fr";
-        console.log(lang);
-        console.log(slides[index].text);
-        console.log(texts.fr[slides[index].text]);
-        console.log(texts[lang]?.[slides[index].text]);
-
-    // document.getElementById("slideYear").textContent =
-    //     slides[index].year;
+    const lang = localStorage.getItem("lang") || "fr";
 
     document.getElementById("slideTitle").innerHTML =
         texts[lang][slides[index].title];
@@ -127,10 +121,7 @@ function loadSlide(index){
 
     document.getElementById("slideCaption").innerHTML =
         texts[lang][slides[index].caption];
-
-
-    
-}
+};
 
 
 document
@@ -175,8 +166,8 @@ document.addEventListener("keydown", (e) => {
 
 });
 
-
     appliquerTraductions();
+ 
     slider.classList.add("show");
     enregistrerContenuVu("apr1");
   };
@@ -217,49 +208,49 @@ if (vs) {
       <div class="card">
         <div class="info">i</div>
         <h3 data-translate="titreC1">Chaebols</h3>
-        <p>Conglomérat industriel sud-coréen de type familial, qui combine des activités très diverses, avec le soutien de l'État et des banques.</p>
+        <p data-translate="pC1">Conglomérat industriel sud-coréen de type familial, qui combine des activités très diverses, avec le soutien de l'État et des banques.</p>
       </div>
 
       <div class="card">
         <div class="info">i</div>
         <h3 data-translate="titreC2">Conglomérat</h3>
-        <p>Ensemble d'entreprises réunies par des liens juridiques et financiers plus ou moins précis, avec des activités très diverses.</p>
+        <p data-translate="pC2">Ensemble d'entreprises réunies par des liens juridiques et financiers plus ou moins précis, avec des activités très diverses.</p>
       </div>
 
       <div class="card">
         <div class="info">i</div>
         <h3 data-translate="titreC3">Grande entreprise</h3>
-        <p>Entreprise employant au moins 5000 salariés, avec un chiffre d'affaires supérieur à 1,5 milliard d'euros.</p>
+        <p data-translate="pC3">Entreprise employant au moins 5000 salariés, avec un chiffre d'affaires supérieur à 1,5 milliard d'euros.</p>
       </div>
     </div>
     <br><br>
-    <h1 class="t-comparaison">Tableau comparatif</h1>
+    <h1 class="t_comparaison" data-translate="t_comparaison">Tableau comparatif</h1>
 
   <div class="compare-grid">
 
     <div class="empty"></div>
-    <div class="header">Grandes entreprises</div>
-    <div class="header">Chaebols</div>
+    <div class="header" data-translate="titreCo1">Grandes entreprises</div>
+    <div class="header" data-translate="titreCo2">Chaebols</div>
 
-    <div class="label">Fonctionnement</div>
-    <div class="cell">Machine à profit</div>
-    <div class="cell">Système de pouvoir</div>
+    <div class="label" data-translate="titreL1">Fonctionnement</div>
+    <div class="cell" data-translate="titreC1">Machine à profit</div>
+    <div class="cell" data-translate="titreC2">Système de pouvoir</div>
 
-    <div class="label">Hiérarchie</div>
-    <div class="cell">Le fondateur part et des gestionnaires prennent le relais</div>
-    <div class="cell">Le pouvoir est dynastique</div>
+    <div class="label" data-translate="titreL2">Hiérarchie</div>
+    <div class="cell" data-translate="titreC3">Le fondateur part et des gestionnaires prennent le relais</div>
+    <div class="cell" data-translate="titreC4">Le pouvoir est dynastique</div>
 
-    <div class="label">Spécialisation</div>
-    <div class="cell">Se spécialise dans un domaine précis : luxe, électronique</div>
-    <div class="cell">Aucune spécialisation, ils sont présents dans tous les domaines</div>
+    <div class="label" data-translate="titreL3">Spécialisation</div>
+    <div class="cell" data-translate="titreC5">Se spécialise dans un domaine précis : luxe, électronique</div>
+    <div class="cell" data-translate="titreC6">Aucune spécialisation, ils sont présents dans tous les domaines</div>
 
-    <div class="label">Croissance</div>
-    <div class="cell">Elle grandit par le marché</div>
-    <div class="cell">Créés et financés par le gouvernement sud-coréen après la guerre</div>
+    <div class="label" data-translate="titreL4">Croissance</div>
+    <div class="cell" data-translate="titreC7">Elle grandit par le marché</div>
+    <div class="cell" data-translate="titreC8">Créés et financés par le gouvernement sud-coréen après la guerre</div>
 
-    <div class="label">Statut</div>
-    <div class="cell">Souvent une entité claire avec des filiales</div>
-    <div class="cell">Amas d’entreprises juridiquement indépendantes mais liées</div>
+    <div class="label" data-translate="titreL5">Statut</div>
+    <div class="cell" data-translate="titreC9">Souvent une entité claire avec des filiales</div>
+    <div class="cell" data-translate="titreC10">Amas d’entreprises juridiquement indépendantes mais liées</div>
 
   </div>
 
@@ -289,13 +280,13 @@ if (deplacement) {
   deplacement.onclick = () => {
     sliderContent.innerHTML = `
         <div class="grain">
-    <h1>Les moyens de déplacements en Corée du Sud </h1> <br> 
+    <h1 data-translate="titre_deplacer">Les moyens de déplacements en Corée du Sud </h1> <br> 
       <div class="timeline-liste full">
     <div class="timeline-content-liste">
       <ul class="liste">
-        <li>Les moyens mis à disposition en Corée du Sud pour se déplacer sont nombreux, voitures, bus, métro, train, vélo et même trottinette électrique.</li>
+        <li data-translate="text1_deplacer">Les moyens mis à disposition en Corée du Sud pour se déplacer sont nombreux, voitures, bus, métro, train, vélo et même trottinette électrique.</li>
         <br>
-        <li>Cependant la grande majorité d'entre eux ont été soit construits par des entreprises appartenant au chaebols soit appartiennent tout simplement à ceux-ci.</li>
+        <li data-translate="text2_deplacer">Cependant la grande majorité d'entre eux ont été soit construits par des entreprises appartenant au chaebols soit appartiennent tout simplement à ceux-ci.</li>
       </ul>
     </div>
   </div>
@@ -304,8 +295,8 @@ if (deplacement) {
   <div class="timeline-moyensD gauche">
     <div class="v-hyundai"><img src="img/voitures-hyundai.jpg"></div>
     <div class="timeline-content-M2">
-      <h3>Espaces routiers et véhicules</h3>
-      <p>
+      <h3 data-translate="titre1_deplacer">Espaces routiers et véhicules</h3>
+      <p data-translate="text3_deplacer">
       Commençons par les voitures, en Corée du Sud, les marques les plus représentées sont évidemment KIA et Hyundai, dû au contexte historique de la Corée qui domine dans le secteur de l'automobile, il est évident que les deux marques issues des chaebols sont omniprésentes.
       Dans leur pays respectif, Hyundai et KIA à eux seuls représentent 75% des automobiles en Corée du Sud. Le reste correspond à des marques importées ou des marques locales moins populaires et influentes.        </p>
     </div>
@@ -315,9 +306,9 @@ if (deplacement) {
   <div class="timeline-liste full">
     <div class="timeline-content-liste">
       <ul class="liste">
-        <li>Toujours sur les espaces routiers, la Corée du Sud dispose de nombreux bus et bus urbains, dominés par Hyundai Motors et KGM Commercials.</li>
+        <li data-translate="text4_deplacer">Toujours sur les espaces routiers, la Corée du Sud dispose de nombreux bus et bus urbains, dominés par Hyundai Motors et KGM Commercials.</li>
         <br>
-        <li>90% de la proportion des bus dans le pays proviennent de Hyundai.</li>
+        <li data-translate="text5_deplacer">90% de la proportion des bus dans le pays proviennent de Hyundai.</li>
       </ul>
     </div>
   </div>
@@ -326,8 +317,8 @@ if (deplacement) {
 
   <div class="timeline-ferro full">
     <div class="timeline-content-ferro">
-      <h3> Transports ferroviaires </h3>
-      <p>Un autre moyen de déplacement très populaire en Corée, c’est le métro coréen :
+      <h3 data-translate="titre2_deplacer"> Transports ferroviaires </h3>
+      <p data-translate="text6_deplacer">Un autre moyen de déplacement très populaire en Corée, c’est le métro coréen :
       disponible dans six villes principales en Corée du Sud (Séoul et Incheon, Busan, Daegu, Gwangju et Daejeon). <br><br>
       Le réseau ferroviaire coréen, est très dense, aussi remarquable par son efficacité, et sa propreté. Toutefois, ses réseaux n’appartiennent pas aux Chaebols. 
       Cependant, les métros ont bien été fabriqués par Hyundai Rotem qui appartiennent à Hyundai Motor Groups.</p>
@@ -338,7 +329,7 @@ if (deplacement) {
   <div class="timeline-moyensD droite">
     <div class="hsr"><img src="img/hsr-350X.webp" alt=""></div>
     <div class="timeline-content-M2">
-      <p>
+      <p data-translate="text7_deplacer">
       A plus grande échelle, nous avons le KTX et les SRT qui sont des trains de grandes lignes en Corée du Sud, permettant de rejoindre de très grandes villes comme Seoul, Busan, Honam etc.
       <br>
       <br>
@@ -351,11 +342,11 @@ if (deplacement) {
     <div class="timeline-liste full">
         <div class="timeline-content-liste">
         <ul class="liste">
-            <li>En ce qui concerne les vélos et les trottinettes électriques, il existe de nombreuses options : Ttareungi, Tashu, Kickgoing. Néanmoins Kakao T permet d'emprunter des vélos électriques et des trottinettes électriques.</li>
+            <li data-translate="text8_deplacer">En ce qui concerne les vélos et les trottinettes électriques, il existe de nombreuses options : Ttareungi, Tashu, Kickgoing. Néanmoins Kakao T permet d'emprunter des vélos électriques et des trottinettes électriques.</li>
             <br>
-            <li>De plus, la Corée-du-Sud possède ses propres services de cartographie proposées par Kakao (Kakao Map) et (Naver) Naver Maps, des Chaebols à l’échelle numérique.</li>
+            <li data-translate="text9_deplacer">De plus, la Corée du Sud possède ses propres services de cartographie proposées par Kakao (Kakao Map) et (Naver) Naver Maps, des Chaebols à l’échelle numérique.</li>
             <br>
-            <li>Globalement, les Chaebols ont un énorme impact dans la vie quotidienne des coréens lorsqu’il s’agit de se déplacer, il existe très peu de possibilités pour se déplacer sans avoir recours aux Chaebols.</li>
+            <li data-translate="text10_deplacer">Globalement, les Chaebols ont un énorme impact dans la vie quotidienne des coréens lorsqu’il s’agit de se déplacer, il existe très peu de possibilités pour se déplacer sans avoir recours aux Chaebols.</li>
         </ul>
         </div>
     </div>
@@ -390,7 +381,7 @@ if (affaireScandaleuse) {
     <section class="news">
 
     <div class="title-container">
-        <h1>Chaebol News</h1>
+        <h1 data-translate="chaebol_news">Chaebol News</h1>
         <div class="line"></div>
     </div>
 
@@ -400,24 +391,24 @@ if (affaireScandaleuse) {
         <!-- COLONNE GAUCHE -->
         <div class="left-column">
             <div class="chapo">
-                <h2>L’affaire scandaleuse du SK Chemical et Humidifier</h2>
-                <p>
+                <h2 data-translate="titre_skC">L’affaire scandaleuse du SK Chemical et Humidifier</h2>
+                <p data-translate="texte1_skC">
                 Le scandale des désinfectants pour humidificateurs est considéré comme l'un des pires scandales sanitaires de Corée du Sud, directement lié à la négligence des chaebols.                
                 </p>
             </div>
 
-            <div class="section-title">Origine et contexte</div>
-            <p>
+            <div class="section-title" data-translate="titre1_skC">Origine et contexte</div>
+            <p data-translate="texte2_skC">
                 Dans les années 1990 et 2000, les désinfectants pour humidificateurs ont connu un succès fulgurant en Corée du Sud. La publicité vantait les mérites de ces produits chimiques, ajoutés à l'eau des humidificateurs, pour éliminer les bactéries et protéger la santé de la famille. Les deux principaux produits utilisés étaient le PHMG (polyhexaméthylène guanidine) et le PGH (chlorure d'oligo(2-(2-éthoxy)éthoxyéthyl guanidinium)), désinfectants sans danger pour la peau, mais extrêmement toxiques par pulvérisation et inhalation. Oxy Reckitt Benckiser (multinationale) et des chaebols comme SK Chemical et Lotte Mart en étaient les principaux fabricants et distributeurs.
             </p>
 
-            <div class="section-title">Le déroulement du scandale</div>
-            <p>
+            <div class="section-title" data-translate="titre2_skC">Le déroulement du scandale</div>
+            <p data-translate="texte3_skC">
                 L'affaire a commencé à attirer l'attention en 2011 lorsqu'un grand nombre de femmes enceintes et d'enfants ont été hospitalisés pour des symptômes inexpliqués de fibrose pulmonaire aiguë, entraînant de nombreux décès. Les enquêtes menées par les Centres coréens de contrôle et de prévention des maladies (KCDC) ont par la suite établi un lien direct entre le désinfectant pour humidificateurs et de graves lésions pulmonaires. Les statistiques gouvernementales ont recensé des milliers de victimes, dont plus de 1 500 décès officiels, bien que des organisations de la société civile estiment que le nombre réel pourrait être bien plus élevé.
             </p>
 
-            <div class="section-title">Les circonstances et les décisions de justice</div>
-            <p>
+            <div class="section-title" data-translate="titre3_skC">Les circonstances et les décisions de justice</div>
+            <p data-translate="texte4_skC">
                 La procédure judiciaire a été longue et controversée en raison des dénégations de responsabilité des entreprises impliquées.
                 <br><br>
 
@@ -431,9 +422,9 @@ if (affaireScandaleuse) {
         <!-- COLONNE DROITE -->
         <div class="right-column">
 
-            <img src="img/voitures-hyundai.jpg" alt="News">
+            <img src="img/SK_chemicals.png" alt="News">
 
-            <div class="quote-box">
+            <div class="quote-box" data-translate="texte5_skC">
                 Cette affaire a non seulement abouti à des condamnations pénales, mais a également contraint le gouvernement sud-coréen à adopter une réglementation plus stricte sur les produits chimiques ménagers (communément appelée « Loi sur les produits chimiques ») et a profondément modifié la perception de la société quant à l’éthique des entreprises.
             </div>
 
@@ -467,17 +458,17 @@ if (boycottskvsjp) {
   boycottskvsjp.onclick = () => {
     sliderContent.innerHTML = `
         <div class="grain">
-        <h1>Boycott de la Corée contre le Japon</h1> <br>
+        <h1 data-translate="titre_boycott">Guerre commerciale Japon-Corée et boycott</h1> <br>
         <div class="timeline-boycott">
   <div class="timeline-line">
     <div class="timeline-partie">
 
-        <button class="timeline-boycott-title">
+        <button class="timeline-boycott-title" data-translate="t1_boycott">
             L'élément déclencheur : Une décision de justice sur fond de contentieux historique
         </button>
 
         <div class="timeline-boycott-content">
-            <p>
+            <p data-translate="text1_boycott">
                 En octobre 2018, la Cour suprême sud-coréenne a rendu un arrêt historique : elle a statué que de grandes entreprises japonaises (comme Nippon Steel et Mitsubishi Heavy Industries) devaient indemniser les travailleurs coréens soumis au travail forcé durant l'occupation japonaise de la péninsule (1910-1945). Le Japon s'est fermement opposé à cette décision. Du côté du gouvernement japonais, la question des réparations de guerre avait déjà été définitivement réglée par le Traité de normalisation des relations de 1965, par lequel le Japon avait versé à la Corée du Sud 800 millions de dollars sous forme d'aide et de prêts préférentiels. Face au refus japonais, la Corée du Sud a commencé à saisir les actifs de ces entreprises sur son territoire. En réaction, Tokyo a décidé de répliquer sur le terrain économique.
                 <br><br>
                 En juillet 2019, le Japon a imposé des sanctions visant le secteur des semi-conducteurs et des écrans, pilier de l'économie sud-coréenne. Tokyo a renforcé les restrictions à l'exportation vers la Corée du Sud concernant trois produits chimiques essentiels, contrôlés de manière quasi exclusive par les entreprises japonaises (représentant 70 à 90 % du marché mondial) :
@@ -497,12 +488,12 @@ if (boycottskvsjp) {
 
     <div class="timeline-partie">
 
-        <button class="timeline-boycott-title">
+        <button class="timeline-boycott-title" data-translate="t2_boycott">
             Réactions de la Corée du Sud : autonomie et boycott
         </button>
 
         <div class="timeline-boycott-content">
-            <p>
+            <p data-translate="text2_boycott">
                 La réaction sud-coréenne a été immédiate, mêlant décisions gouvernementales et stratégie industrielle. Sur le plan diplomatique, Séoul a également retiré le Japon de sa propre liste blanche et a déposé une plainte auprès de l'Organisation mondiale du commerce (OMC). Le gouvernement a même menacé de rompre l'accord de partage de renseignements militaires (GSOMIA), c’est un outil crucial pour surveiller la Corée Nord mais enfin cette décision a été suspendue sous la pression des États-Unis.
                 <br><br>
                 Sur le plan industriel, cette crise a poussé la Corée du Sud à passer d'une dépendance subie à une autonomie forcée. Ce processus a fonctionné grâce à un triangle de collaboration : l'État a massivement investi dans la recherche et développement (R&D), les PME locales ont développé les technologies de substitution, et les Chaebols (Samsung, SK Hynix) jouent un rôle central. Avant 2019, ces géants étaient très réticents à l'idée d'utiliser des matériaux locaux à cause des risques de défauts sur leurs lignes de production. Mais face à l'embargo, Samsung et SK Hynix ont changé de stratégie :
@@ -521,12 +512,12 @@ if (boycottskvsjp) {
 
     <div class="timeline-partie">
 
-        <button class="timeline-boycott-title">
+        <button class="timeline-boycott-title" data-translate="t3_boycott">
             La mobilisation citoyenne : Le mouvement « No Japan » et le cas Uniqlo
         </button>
 
         <div class="timeline-boycott-content">
-            <p>
+            <p data-translate="text3_boycott">
                 Parallèlement à la réponse industrielle, la société civile sud-coréenne a lancé un boycott massif et inédit. Contrairement aux mouvements du passé, souvent éphémères, la campagne de 2019 a été redoutable grâce à l'alliance du patriotisme et du numérique.
                 <br><br>
                 La solidarité des commerçants a été totale : plus de 600 ONG et l'Association des petits distributeurs ont retiré les produits japonais de leurs rayons. Des milliers de supérettes de quartier ont affiché le logo « No Japan » (avec le slogan : <i>"Je n'y vais pas, je n'achète pas"</i>), refusant de vendre de la bière ou du tabac importés du Japon. De jeunes développeurs ont créé l'application NoNoJapan, permettant aux consommateurs de scanner le code-barres d'un produit pour savoir s'il était japonais et obtenir immédiatement une alternative coréenne.
@@ -538,6 +529,7 @@ if (boycottskvsjp) {
                 D'autres secteurs ont subi le même choc : les exportations de bière japonaise vers la Corée ont chuté de près de 99 %, les constructeurs automobiles comme Toyota ou Nissan ont vu leurs ventes s'effondrer (Nissan finira d'ailleurs par quitter le marché coréen), et les vols vers le Japon se sont vidés. Sur les réseaux sociaux, la pression sociale était telle que publier des photos de vacances au Japon ou afficher des marques nippones était considéré comme un manque de fierté nationale. Les sondages de l'époque ont révélé que plus de 80 % des Sud-Coréens soutenaient ce mouvement et que près de 70 % y participaient activement.
 
             </p>
+            
         </div>
 
     </div>
@@ -595,8 +587,8 @@ if (criseFMI) {
         <div class="crise-container">
 
     <div class="etape active">
-        <h2>L’héritage colonial et la guerre coréenne</h2>
-        <p>
+        <h2 data-translate="titre1_fmi">L’héritage colonial et la guerre coréenne</h2>
+        <p data-translate="text1_fmi">
         La période de la colonisation japonaise en Corée présente un point marquant : le Japon a contribué indirectement et sans intention délibérée à l'industrialisation de la Corée. À partir des années 1930, le Japon développe certaines activités industrielles en Corée, principalement pour répondre à ses propres intérêts impériaux. Ce développement ne vise pas à enrichir ou  à moderniser la société coréenne, mais à soutenir la guerre entre le Japon et les autres pays en exploitant les ressources humaines et matérielles de la colonie. Cependant, cette industrialisation a imposé un effet inattendu : elle pose les bases du développement économique futur de la Corée. En effet, plusieurs entreprises coréennes participent, directement ou indirectement, à cette économie de guerre, acquérant des compétences et des structures organisationnelles. Certaines d’entre elles deviendront par la suite des acteurs majeurs du capitalisme coréen moderne.
         <br><br>
         Après la guerre de Corée, le Sud a été coupé économiquement du Nord, avec des répercussions économiques très fortes. Avant cette division, la Corée du Sud dépendait largement du Nord pour ses ressources énergétiques et ses infrastructures industrielles. Privée de ces éléments essentiels, son économie devient principalement agricole, tandis que la population fait face à une pauvreté extrême et à de grandes difficultés pour subvenir à ses besoins. Dans les années 1950, la Corée du Sud est ainsi considérée comme l’un des pays les plus pauvres au monde. Malgré ce contexte difficile, certains grands entrepreneurs émergent et nouent des liens étroits avec le pouvoir politique. Ensemble, ils contribuent à la formation des chaebols, ces conglomérats destinés à jouer un rôle déterminant dans la transformation de l’économie sud-coréenne.
@@ -605,15 +597,15 @@ if (criseFMI) {
 
 
     <div class="etape">
-        <h2>L’aide militaire et économique des américains</h2>
-        <p>
+        <h2 data-translate="titre2_fmi">L’aide militaire et économique des américains</h2>
+        <p data-translate="text2_fmi">
         Après la guerre, sous l'égide des États-Unis, le gouvernement sud-coréen entreprend la reconstruction du pays, s'appuyant sur deux piliers principaux : militaire et économique. Sur le plan militaire, les États-Unis maintinrent 60000 soldats pour former l'armée sud-coréenne et établir des bases permanentes (comme Camp Humphreys), créant ainsi un solide dispositif de sécurité. Sur le plan économique, de 1953 à 1955, les États-Unis injectèrent environ 200 millions de dollars par an dans le budget de la Corée du Sud. Cette aide financière et technique massive permet non seulement au gouvernement sud-coréen de stabiliser la société après la dévastation, mais crée également un marché pour les produits américains, mettant ainsi les bases essentielles permettant à la Corée du Sud de devenir un pilier du bloc capitaliste en Asie. La présence de troupes et d'experts américains (notamment dans le cadre du futur programme Peace Corps) affirme la solidité de l'alliance stratégique, permettant à la Corée du Sud de se développer rapidement malgré le conflit persistant dans la péninsule.
         </p>
     </div>
 
     <div class="etape">
-        <h2>Le rôle de gouvernement de Park Chung-hee</h2>
-        <p>
+        <h2 data-translate="titre3_fmi">Le rôle de gouvernement de Park Chung-hee</h2>
+        <p data-translate="text3_fmi">
             Le général Park Chung-hee a mis en place un modèle économique centralisé, inspiré du complexe militaro-industriel japonais. Par la création de l’Office de planification économique, il a appliqué des plans quinquennaux de modernisation du pays. En particulier, la normalisation des relations avec le Japon (1965) et l'alliance étroite avec les États-Unis ont généré d'importantes ressources pour stimuler les exportations et développer les infrastructures stratégiques. 
             <br>
             Sous la dictature de Park, l’économie voit l’émergence spectaculaire des Chaebols, ces conglomérats familiaux géants se construisent en basant sur le modèle des Zaibatsu japonais. Des groupes tels que Samsung, Hyundai et LG cessent d'être de simples entreprises pour devenir les acteurs stratégiques de la survie nationale. La relation entre l'État et ces groupes n'est pas une simple collaboration, mais une collusion systémique. Le régime de Park garantit la stabilité et la prospérité des Chaebols par une aide massive : politique de taux d'intérêt préférentiel, accès prioritaire aux crédits bancaires et attribution de contrats publics exclusifs. En contrepartie, les Chaebols soutiennent politiquement et financièrement le régime, formant un bloc monolithique où le succès de l'entreprise est indissociable de la survie de la dictature. À partir des années 1970, ce modèle permet à la Corée du Sud de dépasser radicalement, puis de doubler, le dynamisme économique de la Corée du Nord.
@@ -621,8 +613,8 @@ if (criseFMI) {
     </div>
 
     <div class="etape">
-        <h2>L’impact de la crise économique asiatique sur <br> l’économie sud-coréenne et les chaebols</h2>
-        <p>
+        <h2 data-translate="titre4_fmi">L’impact de la crise économique asiatique sur <br> l’économie sud-coréenne et les chaebols</h2>
+        <p data-translate="text4_fmi">
             La crise financière asiatique de 1997, ou « crise du FMI » a été le choc qui a mis fin à l'ère de croissance rapide des chaebols. Auparavant, les chaebols s'étaient développés de manière inconsidérée grâce à des prêts à court terme, faisant grimper leur ratio d'endettement moyen à plus de 500 % (Krueger & Yoo, 2002). Ils s'étaient diversifiés dans tous les secteurs, même ceux où ils n'exerçaient pas d'expertise, ce qui avait engendré une faible efficacité opérationnelle. Lorsque les capitaux étrangers se sont retirés et que le won s'est effondré, ce réseau de conglomérats s'est désintégré, provoquant des faillites retentissantes comme celle du groupe Daewoo, dont la dette dépassait 70 milliards de dollars (OCDE, 1999).
             <br><br>
             En conséquence, la Corée du Sud a dû accepter un plan de sauvetage financier de 57 milliards de dollars du FMI avec les conditions de réformes rigoureuses. Les chaebols ont été contraints de mettre en œuvre la politique du « Big Deal » : les entreprises ont abandonné leurs structures diversifiées et cédé leurs activités déficitaires, mis fin aux garanties croisées et instauré une gouvernance transparente conforme aux normes internationales. 
@@ -732,13 +724,13 @@ if (affaireSPC) {
         <div class="article-pixel">
 
     <header class="hero-news">
-        <div class="breaking">
+        <div class="breaking" data-translate="breaking">
             BREAKING NEWS
         </div>
-        <h1>
+        <h1 data-translate="titre_spc">
             LE SCANDALE SPC
         </h1>
-        <p>
+        <p data-translate="text1_spc">
             Le grave scandale des accidents du travail survenus dans les usines du géant agroalimentaire SPC (propriétaire des marques populaires comme Paris Baguette, Baskin-Robbins et Dunkin) a profondément choqué le public sud-coréenne. L'indignation publique s'est intensifiée après une série d'accidents du travail graves survenus dans les usines de l'entreprise, révélant une défaillance systémique en matière de sécurité des travailleurs.
         </p>
     </header>
@@ -747,12 +739,12 @@ if (affaireSPC) {
     <section class="article-grid">
         <div class="photo-card">
             <img src="img/spc.png">
-            <span>Usine SPC - Corée du Sud</span>
+            <span data-translate="caption_spc1">Usine SPC - Corée du Sud</span>
         </div>
 
         <div class="text-card">
-            <h2>Le scandale</h2>
-            <p>
+            <h2 data-translate="titre1_spc">Le scandale</h2>
+            <p data-translate="text2_spc">
                D'après les données d'organisations de la société civile, entre 2018 et juin 2023, 853 employés de SPC ont été victimes d'accidents du travail (soit une moyenne d'environ 13 cas par mois). Parmi ces violations systémiques, trois accidents graves, ayant entraîné des décès, ont été au cœur de la crise de l'entreprise et ont conduit à un boycott public des produits de la marque. Des accidents du travail graves ont eu lieu à plusieurs fois entre 2022 et 2025 : 
             </p>
         </div>
@@ -760,12 +752,12 @@ if (affaireSPC) {
 
 
     <section class="pixel-timeline">
-        <h2>CHRONOLOGIE</h2>
+        <h2 data-translate="titre2_spc">CHRONOLOGIE</h2>
         <div class="event">
-            <div class="year">
+            <div class="year" data-translate="year1_spc">
                 OCT 2022
             </div>
-            <div class="event-card">
+            <div class="event-card" data-translate="text3_spc">
                 Décès d'une ouvrière de 23 ans
                 dans une usine SPC.
      <br><br>
@@ -774,11 +766,11 @@ if (affaireSPC) {
         </div>
 
         <div class="event">
-            <div class="year">
+            <div class="year" data-translate="year2_spc">
                 AOÛT 2023
             </div>
 
-            <div class="event-card">
+            <div class="event-card" data-translate="text4_spc">
                 Une nouvelle ouvrière décède
                 dans l'usine Shany.
               <br><br>
@@ -787,11 +779,11 @@ if (affaireSPC) {
         </div>
 
         <div class="event">
-            <div class="year">
+            <div class="year" data-translate="year3_spc">
                 MAI 2025
             </div>
 
-            <div class="event-card">
+            <div class="event-card" data-translate="text5_spc">
                 Une employée meurt dans
                 l'usine SPC Samlip.
               <br><br>
@@ -802,14 +794,14 @@ if (affaireSPC) {
 
 
     <section class="quote-card">
-        <p>
+        <p data-translate="quote_spc">
             "Je ne veux pas manger un pain
             taché du sang des ouvriers"
         </p>
     </section>
   <section class="full-card">
-    <h2>Gestion de l'entreprise</h2>
-        <p>
+    <h2 data-translate="titre3_spc">Gestion de l'entreprise</h2>
+        <p data-translate="text6_spc">
             Ce que la société coréenne a jugé inacceptable, c'est l'attitude insensible et la gestion de crise de la direction de l'entreprise immédiatement après le premier accident, ainsi que la gestion répétée, insensible et superficielle des crises par cette même direction.
             <br><br>
              - Immédiatement après l'accident survenu en 2022 et ayant coûté la vie à une ouvrière de 23 ans, l'usine SPC s'est contentée d'arrêter la machine défectueuse, puis a contraint les autres ouvriers à continuer d'utiliser les machines voisines dès le lendemain, juste à côté du lieu où leur collègue venait de perdre la vie.
@@ -826,20 +818,20 @@ if (affaireSPC) {
 
     <section class="article-grid">
         <div class="text-card-2">
-            <h2>Le mouvement NO SPC</h2>
-            <p>
+            <h2 data-translate="titre4_spc">Le mouvement NO SPC</h2>
+            <p data-translate="text7_spc">
                Les conditions de travail dangereuses pour les employés des usines SPC, ainsi que la gestion inefficace des conséquences par l'entreprise, ont entraîné une vague de boycotts contre les produits des marques appartenant à l'entreprise. Le dernier accident, survenu en mai 2025, a exacerbé la colère des consommateurs sud-coréens, les incitant à participer à la vaste campagne de boycott « Non à SPC ». Les consommateurs sud-coréens, notamment les jeunes, ont lancé un puissant mouvement de boycott sur les réseaux sociaux. 
             </p>
         </div>
 
         <div class="photo-card">
             <img src="img/scandale-spc.png">
-            <span>Usine SPC - Corée du Sud</span>
+            <span data-translate="caption_spc2"></span>
         </div>
 
     </section>
     <section class="full-card-2">
-        <p>
+        <p data-translate="text8_spc">
             Ils ont partagé des listes de toutes les marques de l'écosystème SPC pour appeler à un boycott total. Le slogan « Je ne veux pas manger de pain taché du sang des ouvriers » est devenu un symbole du mouvement. Les ventes de nombreuses franchises Paris Baguette ont chuté.
             </p>
     </section>
@@ -847,18 +839,18 @@ if (affaireSPC) {
   <section class="article-grid">
         <div class="photo-card">
             <img src="img/scandale-spc-2.png">
-            <span>Usine SPC - Corée du Sud</span>
+            <span data-translate="caption_spc3"></span>
         </div>
 
         <div class="text-card-2">
-            <p>
+            <p data-translate="text9_spc">
                Suite à une série d'accidents du travail chez SPC, l'indignation grandissait. Les principaux syndicats français, notamment la CGT (Confédération Générale du Travail), se sont coordonnés avec l'UITA (Fédération Internationale des Travailleurs de l'Alimentation) et des organisations coréennes en France pour organiser des manifestations. Des syndicalistes français se sont rassemblés devant le magasin Paris Baguette, dans le 1er arrondissement de Paris. Ils ont distribué des tracts en français aux Parisiens et aux touristes, expliquant les nombreux manquements aux règles de sécurité au travail, le nombre de travailleurs blessés en Corée du Sud et appelant à une meilleure prise de conscience des pratiques éthiques de l'entreprise.
             </p>
         </div>
     </section>
   
   <section class="conclusion-card">
-        <p>
+        <p data-translate="text10_spc">
             À travers la campagne de boycott, les participants ont exprimé leur profonde indignation face au contraste saisissant entre l'image élégante et moderne des boutiques Paris Baguette et les conditions de travail difficiles et dangereuses qui régnaient dans les usines. Ils ont dénoncé le fait que les grandes entreprises privilégiaient la rapidité de production et la maximisation des profits au détriment de la sécurité des travailleurs.
         </p>
 

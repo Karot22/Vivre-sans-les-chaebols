@@ -1313,6 +1313,10 @@ div{
     object-fit:cover;
 }
 
+#slideCaption a{
+    color: white;
+}
+
 .slide-image p{
     margin-top:10px;
     color:#ccc;
@@ -1690,6 +1694,30 @@ h1,h2{
 }
 
 /* FIN Page équipe */
+
+/*  Page mentions légales */
+
+.mentions-legales section{
+    margin: 3%;
+    font-family: fontText;
+}
+
+.mentions-legales{
+    padding-bottom: 5%;  
+}
+
+.mentions-legales h2{
+    text-align: start;
+}
+
+.mentions-legales p{
+    font-size: 1.3rem;
+}
+
+
+/* FIN Page mentions légales */
+
+
 
 
 
