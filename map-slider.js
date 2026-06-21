@@ -1,6 +1,19 @@
 let current = 0;
 let loadSlide = null;
 
+function toggleAccordion(button) {
+  const content = button.nextElementSibling;
+  const arrow = button.querySelector(".fleche-bas");
+
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+    arrow.textContent = "▼";
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    arrow.textContent = "▲";
+  }
+}
+
 // slider naissance chaebols
 const apr1 = document.getElementById("apr1");
 
@@ -46,6 +59,54 @@ if (apr1) {
     </div>
 
     
+</div>
+
+<div class="accordion">
+  <button class="accordion-header" onclick="toggleAccordion(this)">
+    <p data-translate="sources">Sources</p>
+    <span class="fleche-bas">▼</span>
+  </button>
+
+  <div class="accordion-content">
+    <ul>
+      <li>LG <br>
+        <a href="https://www.lgcorp.com/about/history/1">https://www.lgcorp.com/about/history/1</a>
+      </li>
+      <li>Samsung<br>
+        <a href="https://techbehemoths.com/blog/samsung-advertise-products">https://techbehemoths.com/blog/samsung-advertise-products</a>
+        <br>
+        <a href="https://www.chosun.com/english/travel-food-en/2025/11/19/BEDBX3RGKVC7LBCIGHX3XR5W4A/">https://www.chosun.com/english/travel-food-en/2025/11/19/BEDBX3RGKVC7LBCIGHX3XR5W4A/</a> 
+        <br>
+        <a href="https://koreajoongangdaily.joins.com/2015/04/22/politics/How-revolution-discovered-its-need-of-business/3003410.html">https://koreajoongangdaily.joins.com/2015/04/22/politics/How-revolution-discovered-its-need-of-business/3003410.html</a>
+      </li>
+      <li>
+      Hyundai<br>
+        <a href="https://www.hyundai.com/worldwide/en/brand-journal/heritage">https://www.hyundai.com/worldwide/en/brand-journal/heritage</a>
+        <br>
+        <a href="https://www.hyundai.com/fr/fr/decouvrir-hyundai/la-marque/notre-histoire.html">https://www.hyundai.com/fr/fr/decouvrir-hyundai/la-marque/notre-histoire.html</a> 
+        <br>
+        <a href="https://www.asan-chungjuyung.com/">https://www.asan-chungjuyung.com/</a>
+        <br>
+        <a href="https://newslibrary.naver.com/">https://newslibrary.naver.com/</a> 
+      </li>
+      <li>
+      Lotte <br>
+        <a href="https://www.lotte.co.kr/global/en/about/history.do">https://www.lotte.co.kr/global/en/about/history.do</a>
+        <br>
+        <a href="https://lotte-hd.com/en/group/history/">https://lotte-hd.com/en/group/history/</a> 
+      </li>
+      <li>
+      SK <br>
+        <a href="https://eng.sk.com/history/foundation-of-sunkyong-textile">https://eng.sk.com/history/foundation-of-sunkyong-textile</a>
+      </li>
+      <li>
+      Hanwha <br>
+        <a href="https://www.hanwha.com/about-us/history.do">https://www.hanwha.com/about-us/history.do</a>
+        <br>
+        <a href="https://www.hanwha.com/assets/download/2025_Hanwha_Profile_Milestones_EN.pdf">https://www.hanwha.com/assets/download/2025_Hanwha_Profile_Milestones_EN.pdf</a>
+      </li>
+    </ul>
+  </div>
 </div>
             
 </div>
@@ -353,6 +414,37 @@ if (deplacement) {
     <br>
     <br>
     <br>
+
+<div class="accordion">
+  <button class="accordion-header" onclick="toggleAccordion(this)">
+    <p data-translate="sources">Sources</p>
+    <span class="fleche-bas">▼</span>
+  </button>
+
+  <div class="accordion-content">
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=I81y2gtFCNQ">https://www.youtube.com/watch?v=I81y2gtFCNQ</a>
+      </li>
+      <li>
+        <a href="https://www.hankyung.com/article/2024102221141">https://www.hankyung.com/article/2024102221141</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=AbbQAVcsKU0">https://www.youtube.com/watch?v=AbbQAVcsKU0</a> 
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=UtqBCYAGQY4">https://www.youtube.com/watch?v=UtqBCYAGQY4</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=R_o8piTaHwI">https://www.youtube.com/watch?v=R_o8piTaHwI</a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=bGMm36N7Nqo">https://www.youtube.com/watch?v=bGMm36N7Nqo</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 </div>
   
 `;

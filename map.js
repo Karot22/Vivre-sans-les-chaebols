@@ -467,7 +467,9 @@ const menuIcon = document.getElementById("menuIcon");
 const goDual = document.getElementById("goDual");
 const goDoc = document.getElementById("goDoc");
 const goAnnexe = document.getElementById("goAnnexe");
+const goBiblio = document.getElementById("goBiblio");
 const goLegal = document.getElementById("goLegal");
+
 
 // langue
 const langBtns = document.querySelectorAll(".menu-lang button");
@@ -500,6 +502,7 @@ if (menuOverlay) menuOverlay.onclick = closeMenu;
 if (goDual) goDual.onclick = () => location.href = "dual.html";
 if (goDoc) goDoc.onclick = () => location.href = "documentaire.html";
 if (goAnnexe) goAnnexe.onclick = () => location.href = "annexes.html";
+if (goBiblio) goBiblio.onclick = () => location.href = "bibliographie.html";
 if (goLegal) goLegal.onclick = () => location.href = "mentions-legales.html";
 
 

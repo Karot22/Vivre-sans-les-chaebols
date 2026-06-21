@@ -191,6 +191,14 @@ const texts = {
     role_amelie:"Graphic Design Manager - 그래픽 디자인 매니저",
     galerie:"Photo gallery",
 
+    biblio:"Bibliography",
+    menuBiblio:"Bibliography",
+
+    sources:"Sources",
+    articles:"Articles",
+    webographie:"Webography",
+
+
   },
   fr: {
     menuHome: "Accueil",
@@ -383,6 +391,16 @@ const texts = {
     role_marie:"Responsable du développement web - 웹 개발 매니저",
     role_amelie:"Responsable du graphisme - 그래픽 디자인 매니저",
     galerie:"Galerie Photo",
+
+    biblio:"Bibliographie",
+    menuBiblio:"Bibliographie",
+
+    sources:"Sources",
+    articles:"Articles",
+    webographie:"Webographie",
+
+
+
     
 
 },
@@ -577,6 +595,16 @@ const texts = {
     role_marie:"Responsable du développement web - 웹 개발 매니저",
     role_amelie:"Responsable du graphisme - 그래픽 디자인 매니저",
     galerie:"사진 갤러리",
+
+    biblio:"참고문헌",
+    menuBiblio:"참고문헌",
+
+    sources:"출처",
+
+    articles:"기사",
+    webographie:"웹그래피",
+
+
 
 
   },
