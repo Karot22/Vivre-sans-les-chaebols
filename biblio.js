@@ -5,6 +5,7 @@ const menuIcon = document.getElementById("menuIcon");
 
 // navigation
 const goDual = document.getElementById("goDual");
+const goCarte = document.getElementById("goCarte");
 const goDoc = document.getElementById("goDoc");
 const goAnnexe = document.getElementById("goAnnexe");
 const goBiblio = document.getElementById("goBiblio");

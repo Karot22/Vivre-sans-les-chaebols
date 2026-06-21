@@ -197,6 +197,24 @@ const texts = {
     sources:"Sources",
     articles:"Articles",
     webographie:"Webography",
+    menuCarte:"Map",
+
+    titre_mentions_legales:"Legal Notice",
+    editeur_site:"Website Publisher",
+    directeur_publi:"Publication Director",
+    credits:"Credits",
+    conception_dev:"Conception : L'équipe Chaebols <br> Web Development : Marie Babkine",
+    hebergement:"Host",
+    titre_propriete:"Intellectual Property",
+    text1_propriete:"This documentary film is distributed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. You are permitted to share, adapt, and remix it for noncommercial purposes, as long as you credit us and distribute your creations under the same terms.",
+    text2_propriete:"This website is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. You are permitted to share, adapt, and remix it for noncommercial purposes, as long as you credit us and distribute your works under the same terms.",
+    titre_responsabilite:"Responsability",
+    text1_responsabilite:"The information provided on this site is for informational purposes only. Although every effort has been made to ensure its accuracy, it may contain errors or omissions.",
+    text2_responsabilite:"The publisher shall not be held liable for any direct or indirect damages resulting from the use of this website.",
+    titre_liens:"External Links",
+    text_lien:"This website may contain links to third-party websites. The publisher has no control over their content and accepts no responsibility for the information published on those sites.",
+    titre_donnees_perso:"Personal Data",
+    text_donnees_perso:"Ce site ne collecte aucune donnée personnelle sans le consentement de l'utilisateur.",
 
 
   },
@@ -398,8 +416,25 @@ const texts = {
     sources:"Sources",
     articles:"Articles",
     webographie:"Webographie",
+    menuCarte:"Carte",
 
 
+    titre_mentions_legales:"Mentions légales",
+    editeur_site:"Éditeur du site",
+    directeur_publi:"Directeur de la publication",
+    credits:"Crédits",
+    conception_dev:"Conception : L'équipe Chaebols <br> Développement : Marie Babkine",
+    hebergement:"Hébergement",
+    titre_propriete:"Propriété intellectuelle",
+    text1_propriete:"Le film documentaire est distribué sous licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0). Vous êtes autorisé à le partager, l'adapter et le remixer à des fins non commerciales, tant que vous nous créditez et que vous distribuez vos créations sous des conditions identiques.",
+    text2_propriete:"Ce site web est distribué sous licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0). Vous êtes autorisé à le partager, l'adapter et le remixer à des fins non commerciales, tant que vous nous créditez et que vous distribuez vos créations sous des conditions identiques.",
+    titre_responsabilite:"Responsabilité",
+    text1_responsabilite:"Les informations fournies sur ce site sont communiquées à titre informatif. Malgré le soin apporté à leur rédaction, elles peuvent contenir des erreurs ou omissions.",
+    text2_responsabilite:"L'éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site.",
+    titre_liens:"Liens externes",
+    text_lien:"Ce site peut contenir des liens vers des sites tiers. L'éditeur n'exerce aucun contrôle sur leur contenu et décline toute responsabilité concernant les informations qui y sont publiées.",
+    titre_donnees_perso:"Données personnelles",
+    text_donnees_perso:"Ce site ne collecte aucune donnée personnelle sans le consentement de l'utilisateur.",
 
     
 
@@ -603,8 +638,25 @@ const texts = {
 
     articles:"기사",
     webographie:"웹그래피",
+    menuCarte:"지도",
 
 
+    titre_mentions_legales:"법적 고지",
+    editeur_site:"사이트 운영자",
+    directeur_publi:"발행인",
+    credits:"크레딧",
+    conception_dev:"설계 : L'équipe Chaebols <br> 개발 : Marie Babkine",
+    hebergement:"숙박",
+    titre_propriete:"지적 재산권",
+    text1_propriete:"이 다큐멘터리 영화는 크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제(CC BY-NC-SA 4.0) 라이선스에 따라 배포됩니다. 당사를 출처로 명시하고, 제작한 작품을 동일한 조건으로 배포하는 한, 비영리 목적으로 이 작품을 공유, 각색 및 리믹스할 수 있습니다.",
+    text2_propriete:"이 웹사이트는 크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제(CC BY-NC-SA 4.0) 라이선스에 따라 배포됩니다. 귀하는 당사를 출처로 명시하고, 귀하의 창작물을 동일한 조건으로 배포하는 한, 비영리 목적으로 이 웹사이트를 공유, 수정 및 재창작할 수 있습니다.",
+    titre_responsabilite:"책임",
+    text1_responsabilite:"이 사이트에 제공된 정보는 참고용으로만 제공됩니다. 정보를 작성하는 데 세심한 주의를 기울였으나, 오류나 누락이 있을 수 있습니다.",
+    text2_responsabilite:"본 사이트의 이용으로 인해 발생하는 직접적 또는 간접적 손해에 대해 발행사는 어떠한 책임도 지지 않습니다.",
+    titre_liens:"외부 링크",
+    text_lien:"이 사이트에는 제3자 사이트로 연결되는 링크가 포함되어 있을 수 있습니다. 운영자는 해당 사이트의 콘텐츠에 대해 어떠한 통제권도 행사하지 않으며, 그곳에 게시된 정보와 관련하여 어떠한 책임도 지지 않습니다.",
+    titre_donnees_perso:"개인정보",
+    text_donnees_perso:"이 사이트는 사용자의 동의 없이 어떠한 개인정보도 수집하지 않습니다.",
 
 
   },
