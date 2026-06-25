@@ -230,11 +230,17 @@ document.addEventListener("keydown", (e) => {
     appliquerTraductions();
  
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
+    
     enregistrerContenuVu("apr1");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
+
   };
 }
 
@@ -320,11 +326,15 @@ if (vs) {
 `;
     appliquerTraductions();
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
     enregistrerContenuVu("vs");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
   };
 }
 
@@ -450,11 +460,15 @@ if (deplacement) {
 `;
     appliquerTraductions();
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
     enregistrerContenuVu("se-deplacer-en-coree");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
   };
 }
 
@@ -530,11 +544,15 @@ if (affaireScandaleuse) {
 `;
     appliquerTraductions();
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
     enregistrerContenuVu("affaire-scandaleuse");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
   };
 }
 
@@ -651,11 +669,15 @@ titles.forEach(title => {
 
     appliquerTraductions();
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
     enregistrerContenuVu("boycott");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
   };
 }
 
@@ -789,11 +811,15 @@ document.addEventListener("keydown", (e) => {
 
     appliquerTraductions();
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
     enregistrerContenuVu("crise-fmi");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
   };
 }
 
@@ -954,11 +980,15 @@ if (affaireSPC) {
 `;
     appliquerTraductions();
     slider.classList.add("show");
+    menuBtn.classList.add("slider-mode");
+    menu.classList.add("slider-mode");
     enregistrerContenuVu("scandale");
   };
 
   closeSlider.onclick = () => {
     slider.classList.remove("show");
+    menuBtn.classList.remove("slider-mode");
+    menu.classList.remove("slider-mode");
   };
 }
 

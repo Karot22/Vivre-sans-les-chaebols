@@ -1779,8 +1779,17 @@ h1,h2{
 
 /* FIN bibliographie */
 
+.menu.slider-mode {
+  position: fixed;
+}
 
 
+
+.menu-btn.slider-mode{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
 
 
 
@@ -1866,6 +1875,21 @@ h1,h2{
   .v-hyundai{display: flex; flex-direction: column;}
   .hsr{display: flex; flex-direction: column;}
   .timeline-content-M2{max-width: 450px;}
+
+   body.corps {
+        margin: 0;
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map {
+        position: relative;
+    }
+
+  
 }
 
 @media (min-width:601px) and (max-width: 991px) {
@@ -1886,15 +1910,28 @@ h1,h2{
   .hsr{display: none; }
   .timeline-content-M2{max-width: 90%;  width: 100%;}
   .timeline-moyens{margin-left: 39px; margin-right: 0; margin-top: 21px; margin-bottom: 23px;}
-.article-grid{grid-template-columns: none;}
-.photo-card{display: none;}
-.event{grid-template-columns: none;}
-.year{display: none;}
-.content{grid-template-columns: 1fr;}
-.label{display: none;}
-.empty{display: none;}
-.compare-grid{grid-template-columns: 1fr 1fr;}
-.closeVideo{top:-25px;}
+    .article-grid{grid-template-columns: none;}
+    .photo-card{display: none;}
+    .event{grid-template-columns: none;}
+    .year{display: none;}
+    .content{grid-template-columns: 1fr;}
+    .label{display: none;}
+    .empty{display: none;}
+    .compare-grid{grid-template-columns: 1fr 1fr;}
+    .closeVideo{top:-25px;}
+
+    body.corps {
+        margin: 0;
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map {
+        position: relative;
+    }
 
 
 }
@@ -1926,6 +1963,19 @@ h1,h2{
 .compare-grid{grid-template-columns: 1fr 1fr;}
   .closeVideo{top:34px;}
 
+  body.corps {
+        margin: 0;
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map {
+        position: relative;
+    }
+
 }
 
 @media (max-width: 470px) {
@@ -1950,4 +2000,17 @@ h1,h2{
 .compare-grid{grid-template-columns: 1fr 1fr;}
 .timeline-wrapper{display: block;}
     .closeVideo{top:55px;}
+
+    body.corps {
+        margin: 0;
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map {
+        position: relative;
+    }
 }
